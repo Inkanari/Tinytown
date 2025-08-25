@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://q85iosfg0so2"]
+
+[ext_resource type="Texture2D" uid="uid://caxlfuytmits3" path="res://Tileset/dirt.png" id="1_8qe2h"]
+[ext_resource type="Texture2D" uid="uid://bpgye5pws45o6" path="res://Tileset/sand.png" id="2_g14jh"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_46lw5"]
+texture = ExtResource("1_8qe2h")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lorwk"]
+texture = ExtResource("2_g14jh")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_2sr5g"]
+sources/0 = SubResource("TileSetAtlasSource_46lw5")
+sources/1 = SubResource("TileSetAtlasSource_lorwk")
+
+[node name="Pueblo" type="Node2D"]
+
+[node name="fondo" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_2sr5g")
