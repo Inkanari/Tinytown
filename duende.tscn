@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5ri30hqug6hi"]
+
+[ext_resource type="Texture2D" uid="uid://75vfuubgjrem" path="res://personaje/Goblin/PNG/spr_idle_strip9.png" id="1_gjbqq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hn6ox"]
+atlas = ExtResource("1_gjbqq")
+region = Rect2(31, 15.5, 35, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ilh26"]
+size = Vector2(14, 15)
+
+[node name="Duende" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 17
+
+[node name="SprIdleStrip9" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("AtlasTexture_hn6ox")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_ilh26")
