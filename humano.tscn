@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://xx18qqsk6mmk"]
+
+[ext_resource type="Texture2D" uid="uid://dh8qcvax4cjfh" path="res://personaje/Human/IDLE/base_idle_strip9.png" id="1_vriyj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1053"]
+atlas = ExtResource("1_vriyj")
+region = Rect2(41, 23, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vml6h"]
+size = Vector2(11, 16)
+
+[node name="Humano" type="CharacterBody2D"]
+
+[node name="BaseIdleStrip9" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("AtlasTexture_s1053")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_vml6h")
