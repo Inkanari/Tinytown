@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://q85iosfg0so2"]
+[gd_scene load_steps=41 format=4 uid="uid://q85iosfg0so2"]
 
 [ext_resource type="Texture2D" uid="uid://caxlfuytmits3" path="res://Tilemap/Tileset/dirt.png" id="1_8qe2h"]
 [ext_resource type="Texture2D" uid="uid://bpgye5pws45o6" path="res://Tilemap/Tileset/sand.png" id="2_g14jh"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://b5ri30hqug6hi" path="res://duende.tscn" id="16_40kss"]
 [ext_resource type="PackedScene" uid="uid://dicuvpjq2gorl" path="res://arbol.tscn" id="17_2086w"]
 [ext_resource type="PackedScene" uid="uid://cqfnorhvv8xab" path="res://piedra_lv_1.tscn" id="17_ke0fx"]
+[ext_resource type="PackedScene" uid="uid://r6wnasu2cbal" path="res://inventario.tscn" id="19_aa1rv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_46lw5"]
 texture = ExtResource("1_8qe2h")
@@ -2134,3 +2135,9 @@ position = Vector2(122, 35)
 
 [node name="Arbol" parent="." instance=ExtResource("17_2086w")]
 position = Vector2(80, 49)
+
+[node name="Arbol2" parent="." instance=ExtResource("17_2086w")]
+position = Vector2(184, -24)
+
+[node name="Inventario" parent="." instance=ExtResource("19_aa1rv")]
+visible = false

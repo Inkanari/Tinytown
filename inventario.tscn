@@ -1,0 +1,194 @@
+[gd_scene load_steps=18 format=3 uid="uid://r6wnasu2cbal"]
+
+[ext_resource type="Texture2D" uid="uid://b6f6w6vqyya0q" path="res://UI/UI_TravelBook_Spritesheet01a.png" id="1_xf715"]
+[ext_resource type="Texture2D" uid="uid://dnl3lbaaa184e" path="res://Recursos/resources_basic.png" id="2_bnejn"]
+[ext_resource type="Texture2D" uid="uid://b8jpe76o2nha6" path="res://Estructuras/spr_tileset_sunnysideworld_16px.png" id="3_r7ghh"]
+[ext_resource type="FontFile" uid="uid://dpefntvduatg2" path="res://texto/Bongo-8 Mono.ttf" id="4_r7ghh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smvdb"]
+atlas = ExtResource("1_xf715")
+region = Rect2(64, 32, 224, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnejn"]
+atlas = ExtResource("1_xf715")
+region = Rect2(304, 32, 104, 147)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7ghh"]
+atlas = ExtResource("1_xf715")
+region = Rect2(432, 32, 104, 147)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmj48"]
+atlas = ExtResource("1_xf715")
+region = Rect2(65, 289, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3utbr"]
+atlas = ExtResource("2_bnejn")
+region = Rect2(2, 2, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nfo0"]
+atlas = ExtResource("1_xf715")
+region = Rect2(65, 289, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7ev3"]
+atlas = ExtResource("3_r7ghh")
+region = Rect2(880, 352, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aaktn"]
+atlas = ExtResource("1_xf715")
+region = Rect2(65, 289, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxr1x"]
+atlas = ExtResource("2_bnejn")
+region = Rect2(99, 102, 18, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hx4w0"]
+atlas = ExtResource("1_xf715")
+region = Rect2(65, 289, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75bb5"]
+atlas = ExtResource("1_xf715")
+region = Rect2(65, 289, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lm7pk"]
+atlas = ExtResource("1_xf715")
+region = Rect2(65, 289, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awygy"]
+atlas = ExtResource("1_xf715")
+region = Rect2(65, 289, 30, 30)
+
+[node name="Inventario" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 645.0
+texture = SubResource("AtlasTexture_smvdb")
+
+[node name="TextureRect2" type="TextureRect" parent="Control"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = 56.0
+offset_top = 40.0
+offset_right = 568.0
+offset_bottom = 600.0
+texture = SubResource("AtlasTexture_bnejn")
+
+[node name="TextureRect3" type="TextureRect" parent="Control"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = 584.0
+offset_top = 40.0
+offset_right = 1088.0
+offset_bottom = 600.0
+texture = SubResource("AtlasTexture_r7ghh")
+
+[node name="GridContainer" type="GridContainer" parent="Control"]
+custom_minimum_size = Vector2(94, 94)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 28.4
+anchor_bottom = 16.0
+offset_left = 80.0
+offset_top = 64.0
+offset_right = -592.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="casillla 1" type="TextureRect" parent="Control/GridContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = SubResource("AtlasTexture_bmj48")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/GridContainer/casillla 1"]
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 56.0
+offset_bottom = 56.0
+texture = SubResource("AtlasTexture_3utbr")
+flip_h = true
+
+[node name="casilla 2" type="TextureRect" parent="Control/GridContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = SubResource("AtlasTexture_3nfo0")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/GridContainer/casilla 2"]
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 57.0
+offset_bottom = 57.0
+texture = SubResource("AtlasTexture_w7ev3")
+
+[node name="casilla 3" type="TextureRect" parent="Control/GridContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = SubResource("AtlasTexture_aaktn")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/GridContainer/casilla 3"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 8.0
+offset_top = 10.0
+offset_right = 56.0
+offset_bottom = 54.0
+texture = SubResource("AtlasTexture_xxr1x")
+
+[node name="casilla 4" type="TextureRect" parent="Control/GridContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = SubResource("AtlasTexture_hx4w0")
+stretch_mode = 1
+
+[node name="casilla 5" type="TextureRect" parent="Control/GridContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = SubResource("AtlasTexture_75bb5")
+
+[node name="casilla 6" type="TextureRect" parent="Control/GridContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = SubResource("AtlasTexture_lm7pk")
+
+[node name="casilla 7" type="TextureRect" parent="Control/GridContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = SubResource("AtlasTexture_awygy")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 72.0
+offset_right = 236.0
+offset_bottom = 107.0
+theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
+theme_override_colors/font_shadow_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
+theme_override_fonts/font = ExtResource("4_r7ghh")
+theme_override_font_sizes/font_size = 48
+text = "X "

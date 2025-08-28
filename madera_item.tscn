@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1cjc663xtrsc"]
+[gd_scene load_steps=8 format=3 uid="uid://b1cjc663xtrsc"]
 
 [ext_resource type="Texture2D" uid="uid://i3rvrku3rud0" path="res://Recursos/resources_outlined.png" id="1_1qrby"]
+[ext_resource type="Script" uid="uid://cfu4n5arus0bi" path="res://madera_item.gd" id="1_mygpv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mygpv"]
 atlas = ExtResource("1_1qrby")
@@ -8,6 +9,21 @@ region = Rect2(1, 2, 22, 20)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wxkdw"]
 radius = 7.0
+
+[sub_resource type="Animation" id="Animation_mygpv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Madera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_1qrby"]
 resource_name = "movimiento"
@@ -25,21 +41,6 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(0, -5), Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_mygpv"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Madera:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wxkdw"]
 _data = {
 &"RESET": SubResource("Animation_mygpv"),
@@ -47,6 +48,7 @@ _data = {
 }
 
 [node name="madera_item" type="Area2D"]
+script = ExtResource("1_mygpv")
 
 [node name="Madera" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -62,3 +64,5 @@ libraries = {
 &"": SubResource("AnimationLibrary_wxkdw")
 }
 autoplay = "movimiento"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
