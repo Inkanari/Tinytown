@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://hgbwvnmpsoyg"]
+
+[ext_resource type="Texture2D" uid="uid://b8jpe76o2nha6" path="res://Estructuras/spr_tileset_sunnysideworld_16px.png" id="1_wb6me"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnc5v"]
+atlas = ExtResource("1_wb6me")
+region = Rect2(880, 480, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d3b7f"]
+radius = 3.0
+
+[node name="Piedrita_item" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_pnc5v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_d3b7f")

@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://dicuvpjq2gorl"]
+
+[ext_resource type="Texture2D" uid="uid://cuno3o52xdcdb" path="res://Tilemap/Props/Tree.png" id="1_omjyp"]
+[ext_resource type="Script" uid="uid://hl8j4oa0vslq" path="res://arbol.gd" id="1_rcsqm"]
+[ext_resource type="PackedScene" uid="uid://b1cjc663xtrsc" path="res://madera_item.tscn" id="2_ci4l3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcsqm"]
+atlas = ExtResource("1_omjyp")
+region = Rect2(4, 3.5, 24, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ci4l3"]
+size = Vector2(14, 10)
+
+[node name="Arbol" type="StaticBody2D"]
+collision_layer = 17
+collision_mask = 17
+script = ExtResource("1_rcsqm")
+drop_escene = ExtResource("2_ci4l3")
+
+[node name="Tree" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_rcsqm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 33)
+shape = SubResource("RectangleShape2D_ci4l3")

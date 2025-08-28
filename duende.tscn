@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b5ri30hqug6hi"]
 
 [ext_resource type="Texture2D" uid="uid://75vfuubgjrem" path="res://personaje/Goblin/PNG/spr_idle_strip9.png" id="1_gjbqq"]
-[ext_resource type="Script" uid="uid://cc5gdmx3auqe" path="res://duende.gd" id="1_hn6ox"]
+[ext_resource type="Script" path="res://duende.gd" id="1_hn6ox"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hn6ox"]
 atlas = ExtResource("1_gjbqq")
@@ -11,9 +11,9 @@ region = Rect2(39, 23, 18, 16)
 size = Vector2(14, 15)
 
 [node name="Duende" type="CharacterBody2D"]
-position = Vector2(400, 300)
+position = Vector2(400, 0)
 collision_layer = 16
-collision_mask = 17
+collision_mask = 16
 script = ExtResource("1_hn6ox")
 
 [node name="SprIdleStrip9" type="Sprite2D" parent="."]
@@ -21,5 +21,4 @@ texture_filter = 1
 texture = SubResource("AtlasTexture_hn6ox")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_ilh26")

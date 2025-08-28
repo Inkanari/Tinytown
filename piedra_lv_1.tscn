@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://cqfnorhvv8xab"]
+
+[ext_resource type="Script" uid="uid://cvxss8fuhrkho" path="res://piedra_lv_1.gd" id="1_dlgiv"]
+[ext_resource type="Texture2D" uid="uid://b8jpe76o2nha6" path="res://Estructuras/spr_tileset_sunnysideworld_16px.png" id="1_y8pbo"]
+[ext_resource type="PackedScene" uid="uid://dyv6mbn7ruxpv" path="res://piedra_pulida.tscn" id="2_kqs2w"]
+[ext_resource type="PackedScene" uid="uid://hgbwvnmpsoyg" path="res://piedrita_item.tscn" id="3_nx25v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlgiv"]
+atlas = ExtResource("1_y8pbo")
+region = Rect2(856, 477, 16, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kqs2w"]
+size = Vector2(14, 8)
+
+[node name="Piedra_lv1" type="StaticBody2D"]
+script = ExtResource("1_dlgiv")
+drop_escene = ExtResource("2_kqs2w")
+drop_escene_2 = ExtResource("3_nx25v")
+
+[node name="Piedra_lv1" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+texture = SubResource("AtlasTexture_dlgiv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_kqs2w")
