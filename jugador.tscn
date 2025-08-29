@@ -8,9 +8,6 @@
 atlas = ExtResource("1_16k11")
 region = Rect2(34, 16.5, 29, 29)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8o684"]
-size = Vector2(16, 24)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_omvyu"]
 size = Vector2(96, 28)
 
@@ -97,6 +94,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8o684"]
+size = Vector2(12, 8)
+
 [node name="Jugador" type="CharacterBody2D"]
 script = ExtResource("1_omvyu")
 
@@ -106,9 +106,6 @@ texture_filter = 1
 texture_repeat = 1
 scale = Vector2(1.5, 1.5)
 texture = SubResource("AtlasTexture_omvyu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_8o684")
 
 [node name="Hitbox" type="Area2D" parent="."]
 
@@ -124,3 +121,7 @@ animation = &"golpe"
 frame = 9
 frame_progress = 1.0
 speed_scale = 4.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 7)
+shape = SubResource("RectangleShape2D_8o684")
