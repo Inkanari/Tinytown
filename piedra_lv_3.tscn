@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dn32iqj5onbv7"]
+
+[ext_resource type="Script" uid="uid://dcbknwgxic5vi" path="res://piedra_lv_3.gd" id="1_886vi"]
+[ext_resource type="Texture2D" uid="uid://b8jpe76o2nha6" path="res://Estructuras/spr_tileset_sunnysideworld_16px.png" id="2_2qub1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywobo"]
+size = Vector2(20, 11)
+
+[node name="piedra_lv_3" type="StaticBody2D"]
+script = ExtResource("1_886vi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_2qub1")
+region_enabled = true
+region_rect = Rect2(787, 468, 26, 25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_ywobo")
