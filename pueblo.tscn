@@ -2145,3 +2145,6 @@ visible = false
 
 [node name="Humano" parent="." instance=ExtResource("20_1lvy5")]
 position = Vector2(-77, 53)
+
+[node name="Humano2" parent="." instance=ExtResource("20_1lvy5")]
+position = Vector2(-89, 93)
