@@ -1,4 +1,5 @@
 extends StaticBody2D
+var es_piedra = true
 
 @export var vida: int = 2
 @export var drop_escene: PackedScene

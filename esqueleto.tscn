@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b418ypd53pc0h"]
+[gd_scene load_steps=5 format=3 uid="uid://b418ypd53pc0h"]
 
 [ext_resource type="Texture2D" uid="uid://dnowi8g83rm5y" path="res://personaje/Skeleton/PNG/skeleton_idle_strip6.png" id="1_fl07q"]
+[ext_resource type="Script" uid="uid://b7f5hynvlnj3x" path="res://esqueleto.gd" id="1_xvng2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xvng2"]
 atlas = ExtResource("1_fl07q")
@@ -10,6 +11,9 @@ region = Rect2(41, 24, 16, 16)
 size = Vector2(11, 14)
 
 [node name="Esqueleto" type="CharacterBody2D"]
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("1_xvng2")
 
 [node name="SkeletonIdleStrip6" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -19,3 +23,7 @@ texture = SubResource("AtlasTexture_xvng2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_lrdmc")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

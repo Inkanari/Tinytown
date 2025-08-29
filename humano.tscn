@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://xx18qqsk6mmk"]
+[gd_scene load_steps=5 format=3 uid="uid://xx18qqsk6mmk"]
 
+[ext_resource type="Script" uid="uid://ciryk5kpi8v86" path="res://humano.gd" id="1_s1053"]
 [ext_resource type="Texture2D" uid="uid://dh8qcvax4cjfh" path="res://personaje/Human/IDLE/base_idle_strip9.png" id="1_vriyj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s1053"]
@@ -10,6 +11,7 @@ region = Rect2(41, 23, 16, 16)
 size = Vector2(11, 16)
 
 [node name="Humano" type="CharacterBody2D"]
+script = ExtResource("1_s1053")
 
 [node name="BaseIdleStrip9" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -18,3 +20,7 @@ texture = SubResource("AtlasTexture_s1053")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_vml6h")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
