@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://q85iosfg0so2"]
+[gd_scene load_steps=42 format=4 uid="uid://q85iosfg0so2"]
 
 [ext_resource type="Texture2D" uid="uid://caxlfuytmits3" path="res://Tilemap/Tileset/dirt.png" id="1_8qe2h"]
 [ext_resource type="Texture2D" uid="uid://bpgye5pws45o6" path="res://Tilemap/Tileset/sand.png" id="2_g14jh"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://dicuvpjq2gorl" path="res://arbol.tscn" id="17_2086w"]
 [ext_resource type="PackedScene" uid="uid://cqfnorhvv8xab" path="res://piedra_lv_1.tscn" id="17_ke0fx"]
 [ext_resource type="PackedScene" uid="uid://r6wnasu2cbal" path="res://inventario.tscn" id="19_aa1rv"]
+[ext_resource type="PackedScene" uid="uid://xx18qqsk6mmk" path="res://humano.tscn" id="20_1lvy5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_46lw5"]
 texture = ExtResource("1_8qe2h")
@@ -2141,3 +2142,6 @@ position = Vector2(184, -24)
 
 [node name="Inventario" parent="." instance=ExtResource("19_aa1rv")]
 visible = false
+
+[node name="Humano" parent="." instance=ExtResource("20_1lvy5")]
+position = Vector2(-77, 53)
