@@ -11,11 +11,11 @@ enum estado {
 @export var identificacion_minima: float = 28.0
 @export var daño: int = 2
 @export var daño_intervalo: float = 0.3
-var objetivo_arbol: StaticBody2D = null
+var objetivo_arbol: Node2D = null
 @onready var deteccion = $Deteccion
 @onready var cadencia: Timer = $cadencia
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D 
-var rng := RandomNumberGenerator.new()
+var rng := RandomNumberGenerator.new() #ojo aqui con ":"
 #movimiento
 var estado_actual: estado = estado.Quieto
 @export var speed = 100.0
@@ -30,11 +30,9 @@ func _set_anim(v):
 
 #movimiento 
 func _ready():
-	#IA
-	var random = rng.randf()
 	#movimiento
 	initial_position = global_position
-	choose_patrol_target()
+	_selecciona_objetivo()
 	timer.wait_time = pause_time
 	timer.one_shot = true
 	is_moving = false
@@ -42,14 +40,14 @@ func _ready():
 	#cadencia
 	cadencia.wait_time = daño_intervalo
 	cadencia.one_shot = false
-	cadencia.connect("timeout", Callable(self, "_on_cadencia"))
+	cadencia.connect("timeout", Callable(self, "_on_cadencia_tick"))
 	cadencia.stop()
 	#patrulla
 	estado_actual = estado.Quieto 
 	_iniciar_pausa_despues_patrullar()
 	#señales
-	deteccion.connect("body_entered", Callable(self, "_on_detection_body_entered"))
-	deteccion.connect("body_exited", Callable(self, "_on_detection_body_exited"))
+	deteccion.connect("body_entered", Callable(self, "_on_deteccion_body_entered"))
+	deteccion.connect("body_exited", Callable(self, "_on_deteccion_body_exited"))
 func _physics_process(delta: float) -> void:
 	#IA
 	match estado_actual:
@@ -73,12 +71,8 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector2.ZERO
 	
 	move_and_slide()
-func choose_patrol_target() -> void:
-	var random_angle = randf_range(0.0, 2.0 * PI)
-	var random_distance = randf_range(50.0, patrol_range)
-	patrol_target = initial_position + Vector2(cos(random_angle), sin(random_angle)) * random_distance
 func _on_timer_timeout() -> void:
-	choose_patrol_target()
+	_selecciona_objetivo()
 	is_moving = true
 #maquina de estados"
 func _process_patrullar(delta: float) -> void:
@@ -111,26 +105,44 @@ func _on_deteccion_body_entered(body: Node2D) -> void:
 		objetivo_arbol = body
 		estado_actual = estado.Al_arbol #al otro arbol
 		if body.has_signal("caer"):
-			body.caer.connect(Callable(self, "_on_arbol_caida"))
+			body.connect("caer", Callable(self, "_on_arbol_caida"))
 func _on_deteccion_body_exited(body: Node2D) -> void:
 	if body == objetivo_arbol:
 		_cancela_objetivo()
 #talar
-func on_cadencia_tick () -> void: #se refiere a cada golpe del hacha
+func _on_cadencia_tick () -> void: #se refiere a cada golpe del hacha
 	if not is_instance_valid(objetivo_arbol):
 		_cancela_objetivo()
 		return
 	if objetivo_arbol.has_method("recibir_golpe"):
 		objetivo_arbol.recibir_golpe(daño)
 func _on_arbol_caida(arbol_node: Node) -> void:
-	pass #aqui me quede 
-
-func _cancela_objetivo() -> void:
-	pass
-
+	_cancela_objetivo()
+	estado_actual = estado.Quieto
+	await get_tree().create_timer(0.3).timeout
+	_selecciona_objetivo()
+	estado_actual = estado.Patrullar
+#objetivo
+func _selecciona_objetivo():
+	var angle = rng.randf_range(0.0, TAU) #TAU = 2Pi
+	var distancia = rng.randf_range(40.0, patrol_range)
+	patrol_target = initial_position + Vector2(cos(angle), sin(angle)) * distancia
 func _iniciar_pausa_despues_patrullar() -> void:
-	pass
-
+	await get_tree().create_timer(pause_time).timeout
+	_selecciona_objetivo()
+	estado_actual = estado.Patrullar
+func _cancela_objetivo() -> void:
+	if is_instance_valid(objetivo_arbol) and objetivo_arbol.has_signal("caer"):
+		if objetivo_arbol.is_connected("caer", Callable(self, "_on_arbol_caida")):
+			objetivo_arbol.disconnect("caer", Callable(self, "_on_arbol_caida"))
+		if objetivo_arbol.has_method("set"):
+			objetivo_arbol.set("ocupado", false)
+		objetivo_arbol = null
+		cadencia.stop()
+		_play_anim("Quieto")
+		_selecciona_objetivo()
+		estado_actual = estado.Patrullar
+#animacion
 func _play_anim(name: String) -> void:
 	if anim:
 		if anim.animation != name:

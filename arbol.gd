@@ -1,5 +1,6 @@
 extends StaticBody2D
 
+signal caer
 @export var ocupado: bool = false
 @export var vida: int = 4
 @export var drop_escene: PackedScene
@@ -30,5 +31,6 @@ func talar():
 		var loot = drop_escene.instantiate()
 		loot.position = position
 		get_parent().add_child(loot)
+	emit_signal("caer")
 	await get_tree().process_frame
 	queue_free()
