@@ -17,6 +17,10 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 
 GlobalEntidades="*res://Global_Entidades.gd"
 
+[global_group]
+
+arboles="todos los arboles"
+
 [input]
 
 derecha={

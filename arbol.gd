@@ -1,5 +1,6 @@
 extends StaticBody2D
 
+@export var ocupado: bool = false
 @export var vida: int = 4
 @export var drop_escene: PackedScene
 #shake

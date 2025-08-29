@@ -1,5 +1,7 @@
+AnimatedSprite2D
 Timer
 CollisionShape2D
+Area2D
 Sprite2D
 StaticBody2D
 Label
@@ -8,7 +10,5 @@ TextureButton
 GridContainer
 Control
 CanvasLayer
-Area2D
 AnimationPlayer
-AnimatedSprite2D
 CharacterBody2D
