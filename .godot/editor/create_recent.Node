@@ -1,0 +1,14 @@
+Sprite2D
+StaticBody2D
+Label
+TextureRect
+TextureButton
+GridContainer
+Control
+CanvasLayer
+CollisionShape2D
+Area2D
+AnimationPlayer
+AnimatedSprite2D
+CharacterBody2D
+Camera2D
