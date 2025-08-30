@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b5ri30hqug6hi"]
+[gd_scene load_steps=35 format=3 uid="uid://b5ri30hqug6hi"]
 
 [ext_resource type="Texture2D" uid="uid://75vfuubgjrem" path="res://personaje/Goblin/PNG/spr_idle_strip9.png" id="1_gjbqq"]
 [ext_resource type="Script" uid="uid://cc5gdmx3auqe" path="res://duende.gd" id="1_hn6ox"]
@@ -14,6 +14,38 @@ size = Vector2(14, 15)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hn6ox"]
 radius = 32.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8erf"]
+atlas = ExtResource("1_gjbqq")
+region = Rect2(0, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v431a"]
+atlas = ExtResource("1_gjbqq")
+region = Rect2(96, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_th1jr"]
+atlas = ExtResource("1_gjbqq")
+region = Rect2(192, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7vpo"]
+atlas = ExtResource("1_gjbqq")
+region = Rect2(288, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5n4ki"]
+atlas = ExtResource("1_gjbqq")
+region = Rect2(384, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmogw"]
+atlas = ExtResource("1_gjbqq")
+region = Rect2(480, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhpn5"]
+atlas = ExtResource("1_gjbqq")
+region = Rect2(576, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r42gd"]
+atlas = ExtResource("1_gjbqq")
+region = Rect2(672, 0, 96, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_40tac"]
 atlas = ExtResource("3_ll811")
@@ -91,6 +123,35 @@ region = Rect2(864, 0, 96, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_o8erf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v431a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_th1jr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7vpo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5n4ki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmogw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhpn5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r42gd")
+}],
+"loop": true,
+"name": &"Quieto",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_40tac")
 }, {
 "duration": 1.0,
@@ -165,6 +226,7 @@ collision_mask = 16
 script = ExtResource("1_hn6ox")
 
 [node name="SprIdleStrip9" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
 texture = SubResource("AtlasTexture_hn6ox")
 
@@ -185,7 +247,7 @@ debug_color = Color(0.748798, 0.202974, 1, 0.42)
 texture_filter = 1
 texture_repeat = 1
 sprite_frames = SubResource("SpriteFrames_hn6ox")
-animation = &"talar"
+animation = &"Quieto"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Deteccion" to="." method="_on_deteccion_body_entered"]
