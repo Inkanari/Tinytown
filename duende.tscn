@@ -247,7 +247,7 @@ debug_color = Color(0.748798, 0.202974, 1, 0.42)
 texture_filter = 1
 texture_repeat = 1
 sprite_frames = SubResource("SpriteFrames_hn6ox")
-animation = &"Quieto"
+animation = &"talar"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Deteccion" to="." method="_on_deteccion_body_entered"]

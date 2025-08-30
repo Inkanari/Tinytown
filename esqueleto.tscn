@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b418ypd53pc0h"]
+[gd_scene load_steps=30 format=3 uid="uid://b418ypd53pc0h"]
 
 [ext_resource type="Texture2D" uid="uid://dnowi8g83rm5y" path="res://personaje/Skeleton/PNG/skeleton_idle_strip6.png" id="1_fl07q"]
 [ext_resource type="Script" uid="uid://b7f5hynvlnj3x" path="res://esqueleto.gd" id="1_xvng2"]
+[ext_resource type="Texture2D" uid="uid://b8jw7yhtb72cm" path="res://personaje/Skeleton/PNG/skeleton_walk_strip8.png" id="3_lrdmc"]
+[ext_resource type="Texture2D" uid="uid://cpk2xgmo6tmtt" path="res://personaje/Skeleton/PNG/skeleton_attack_strip7.png" id="3_qahio"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xvng2"]
 atlas = ExtResource("1_fl07q")
@@ -10,12 +12,181 @@ region = Rect2(41, 24, 16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lrdmc"]
 size = Vector2(11, 14)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qahio"]
+radius = 33.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6t52"]
+atlas = ExtResource("3_qahio")
+region = Rect2(0, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5oya"]
+atlas = ExtResource("3_qahio")
+region = Rect2(96, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7kkk"]
+atlas = ExtResource("3_qahio")
+region = Rect2(192, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvepm"]
+atlas = ExtResource("3_qahio")
+region = Rect2(288, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdnsm"]
+atlas = ExtResource("3_qahio")
+region = Rect2(384, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7sdg"]
+atlas = ExtResource("3_qahio")
+region = Rect2(480, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sm7sx"]
+atlas = ExtResource("3_qahio")
+region = Rect2(576, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0irli"]
+atlas = ExtResource("3_lrdmc")
+region = Rect2(0, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibnj5"]
+atlas = ExtResource("3_lrdmc")
+region = Rect2(96, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32rhc"]
+atlas = ExtResource("3_lrdmc")
+region = Rect2(192, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3p4t0"]
+atlas = ExtResource("3_lrdmc")
+region = Rect2(288, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxph8"]
+atlas = ExtResource("3_lrdmc")
+region = Rect2(384, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygcs7"]
+atlas = ExtResource("3_lrdmc")
+region = Rect2(480, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekfc4"]
+atlas = ExtResource("3_lrdmc")
+region = Rect2(576, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcdgd"]
+atlas = ExtResource("3_lrdmc")
+region = Rect2(672, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6kvmr"]
+atlas = ExtResource("1_fl07q")
+region = Rect2(0, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3e6vv"]
+atlas = ExtResource("1_fl07q")
+region = Rect2(96, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20nf6"]
+atlas = ExtResource("1_fl07q")
+region = Rect2(192, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lvds"]
+atlas = ExtResource("1_fl07q")
+region = Rect2(288, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekysi"]
+atlas = ExtResource("1_fl07q")
+region = Rect2(384, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dk7hy"]
+atlas = ExtResource("1_fl07q")
+region = Rect2(480, 0, 96, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qahio"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6t52")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5oya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7kkk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvepm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdnsm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7sdg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sm7sx")
+}],
+"loop": true,
+"name": &"Minar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0irli")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibnj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32rhc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3p4t0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxph8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygcs7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekfc4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fcdgd")
+}],
+"loop": true,
+"name": &"Patrullar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6kvmr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3e6vv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20nf6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lvds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekysi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dk7hy")
+}],
+"loop": true,
+"name": &"Quieto",
+"speed": 5.0
+}]
+
 [node name="Esqueleto" type="CharacterBody2D"]
 collision_layer = 32
 collision_mask = 32
 script = ExtResource("1_xvng2")
 
 [node name="SkeletonIdleStrip6" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
 texture_repeat = 1
 texture = SubResource("AtlasTexture_xvng2")
@@ -25,5 +196,19 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_lrdmc")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="cadencia" type="Timer" parent="."]
+
+[node name="Deteccion" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deteccion"]
+shape = SubResource("CircleShape2D_qahio")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_qahio")
+animation = &"Quieto"
+frame = 3
+frame_progress = 0.668355
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
