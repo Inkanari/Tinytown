@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://r6wnasu2cbal"]
+[gd_scene load_steps=19 format=3 uid="uid://r6wnasu2cbal"]
 
+[ext_resource type="Script" uid="uid://x4x7y31wgpvj" path="res://inventario.gd" id="1_bmj48"]
 [ext_resource type="Texture2D" uid="uid://b6f6w6vqyya0q" path="res://UI/UI_TravelBook_Spritesheet01a.png" id="1_xf715"]
 [ext_resource type="Texture2D" uid="uid://dnl3lbaaa184e" path="res://Recursos/resources_basic.png" id="2_bnejn"]
 [ext_resource type="Texture2D" uid="uid://b8jpe76o2nha6" path="res://Estructuras/spr_tileset_sunnysideworld_16px.png" id="3_r7ghh"]
@@ -58,6 +59,7 @@ atlas = ExtResource("1_xf715")
 region = Rect2(65, 289, 30, 30)
 
 [node name="Inventario" type="CanvasLayer"]
+script = ExtResource("1_bmj48")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

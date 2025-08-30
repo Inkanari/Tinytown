@@ -16,6 +16,7 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 [autoload]
 
 GlobalEntidades="*res://Global_Entidades.gd"
+Inventario="*res://inventario.gd"
 
 [global_group]
 
