@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+signal destruir(piedra_node)
+var ocupado: bool = false
 @export var vida: int = 5
 @export var drop_escene: PackedScene
 @export var drop_escene_2: PackedScene 
@@ -46,6 +48,7 @@ func recibir_golpe(daño: int = 1):
 		picar()
 func picar():
 	if drop_escene:
+		emit_signal("destruir", self)
 		for i in range(4):
 			var loot = drop_escene.instantiate()
 			var x = randf_range(10, -10)
@@ -59,5 +62,6 @@ func picar():
 			var y = randf_range(-10, 10)
 			loot.position = position + Vector2(x, y)
 			get_parent().add_child(loot)
+	ocupado = false
 	await get_tree().process_frame
 	queue_free()

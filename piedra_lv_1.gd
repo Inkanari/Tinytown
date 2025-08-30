@@ -1,6 +1,10 @@
 extends StaticBody2D
-var es_piedra = true
 
+#añadi esta señal para el esqueleto al picarlo
+signal destruir(piedra_node)
+var es_piedra = true
+#esta variable es para que el esqueleto pueda marcar la piedra como ocupada
+var ocupado: bool = false
 @export var vida: int = 2
 @export var drop_escene: PackedScene
 @export var drop_escene_2: PackedScene
@@ -26,6 +30,7 @@ func recibir_golpe(daño: int = 1):
 	if vida <= 0:
 		picar()
 func picar():
+	emit_signal("destruir", self)  # Emite la señal antes de destruirse :D
 	if drop_escene:
 		var loot = drop_escene.instantiate()
 		loot.position = position
@@ -36,5 +41,6 @@ func picar():
 		var y = randf_range(5, 10)
 		loot.position = position + Vector2(x, y)
 		get_parent().add_child(loot)
+	ocupado = false # la piedra es libre de morir en paz
 	await get_tree().process_frame
 	queue_free()

@@ -20,6 +20,7 @@ GlobalEntidades="*res://Global_Entidades.gd"
 [global_group]
 
 arboles="todos los arboles"
+piedras=""
 
 [input]
 

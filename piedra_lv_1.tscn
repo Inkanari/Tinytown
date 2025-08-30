@@ -12,7 +12,7 @@ region = Rect2(856, 477, 16, 14)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqs2w"]
 size = Vector2(14, 8)
 
-[node name="Piedra_lv1" type="StaticBody2D"]
+[node name="Piedra_lv1" type="StaticBody2D" groups=["piedras"]]
 script = ExtResource("1_dlgiv")
 drop_escene = ExtResource("2_kqs2w")
 drop_escene_2 = ExtResource("3_nx25v")

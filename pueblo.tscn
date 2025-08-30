@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://q85iosfg0so2"]
+[gd_scene load_steps=47 format=4 uid="uid://q85iosfg0so2"]
 
 [ext_resource type="Texture2D" uid="uid://caxlfuytmits3" path="res://Tilemap/Tileset/dirt.png" id="1_8qe2h"]
 [ext_resource type="Texture2D" uid="uid://bpgye5pws45o6" path="res://Tilemap/Tileset/sand.png" id="2_g14jh"]
@@ -22,8 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://xx18qqsk6mmk" path="res://humano.tscn" id="20_1lvy5"]
 [ext_resource type="PackedScene" uid="uid://ictxdnh7hlh5" path="res://piedra_lv_2.tscn" id="21_65b1k"]
 [ext_resource type="PackedScene" uid="uid://dn32iqj5onbv7" path="res://piedra_lv_3.tscn" id="22_7vwwt"]
-[ext_resource type="PackedScene" path="res://carbon_lv_1.tscn" id="23_cx1s2"]
-[ext_resource type="PackedScene" path="res://carbon_lv_2.tscn" id="24_sd6s8"]
+[ext_resource type="PackedScene" uid="uid://b4y2tfdiyknrr" path="res://carbon_lv_1.tscn" id="23_cx1s2"]
+[ext_resource type="PackedScene" uid="uid://dxbq7r5fbuwis" path="res://carbon_lv_2.tscn" id="24_sd6s8"]
+[ext_resource type="PackedScene" uid="uid://b418ypd53pc0h" path="res://esqueleto.tscn" id="25_kvb3i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_46lw5"]
 texture = ExtResource("1_8qe2h")
@@ -2136,7 +2137,7 @@ position = Vector2(3, 54)
 zoom = Vector2(2, 2)
 
 [node name="Piedra_lv1" parent="Entidades" instance=ExtResource("17_ke0fx")]
-position = Vector2(122, 35)
+position = Vector2(241, 169)
 
 [node name="Arbol" parent="." instance=ExtResource("17_2086w")]
 position = Vector2(80, 49)
@@ -2164,3 +2165,18 @@ position = Vector2(20, 124)
 
 [node name="carbon_lv_2" parent="." instance=ExtResource("24_sd6s8")]
 position = Vector2(99, 158)
+
+[node name="Arbol3" parent="." instance=ExtResource("17_2086w")]
+position = Vector2(-67, 83)
+
+[node name="Arbol4" parent="." instance=ExtResource("17_2086w")]
+position = Vector2(-63, -9)
+
+[node name="Esqueleto" parent="." instance=ExtResource("25_kvb3i")]
+position = Vector2(232, 127)
+
+[node name="piedra_lv_4" parent="." instance=ExtResource("22_7vwwt")]
+position = Vector2(131, 34)
+
+[node name="piedra_lv_5" parent="." instance=ExtResource("21_65b1k")]
+position = Vector2(251, 79)
