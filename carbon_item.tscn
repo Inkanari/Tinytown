@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://benf3qf2xapsw"]
+
+[ext_resource type="Texture2D" uid="uid://dnl3lbaaa184e" path="res://Recursos/resources_basic.png" id="1_d8cpe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bhigd"]
+radius = 9.0
+
+[sub_resource type="Animation" id="Animation_q6wnx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("carbon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dry56"]
+resource_name = "carbon"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("carbon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -3), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fom31"]
+_data = {
+&"RESET": SubResource("Animation_q6wnx"),
+&"carbon": SubResource("Animation_dry56")
+}
+
+[node name="carbon_item" type="Area2D"]
+
+[node name="carbon" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_d8cpe")
+region_enabled = true
+region_rect = Rect2(98, 3, 18, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="carbon"]
+position = Vector2(0, 0.737328)
+shape = SubResource("CircleShape2D_bhigd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_fom31")
+}
+autoplay = "carbon"
+speed_scale = 1.127

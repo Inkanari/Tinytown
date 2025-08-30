@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxbq7r5fbuwis"]
+
+[ext_resource type="Texture2D" uid="uid://b8jpe76o2nha6" path="res://Estructuras/spr_tileset_sunnysideworld_16px.png" id="1_7t7t2"]
+[ext_resource type="Script" uid="uid://dmgvi5vysu26e" path="res://carbon_lv_2.gd" id="1_41wne"]
+[ext_resource type="PackedScene" uid="uid://benf3qf2xapsw" path="res://carbon_item.tscn" id="2_dv7gd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7t7t2"]
+size = Vector2(20, 10)
+
+[sub_resource type="GDScript" id="GDScript_ibvgd"]
+script/source = "extends CollisionShape2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="carbon_lv_2" type="StaticBody2D"]
+script = ExtResource("1_41wne")
+drop_escene = ExtResource("2_dv7gd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_7t7t2")
+region_enabled = true
+region_rect = Rect2(820, 375, 24, 22)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_7t7t2")
+script = SubResource("GDScript_ibvgd")

@@ -98,6 +98,9 @@ animations = [{
 size = Vector2(12, 8)
 
 [node name="Jugador" type="CharacterBody2D"]
+light_mask = 2
+visibility_layer = 2
+z_index = 1
 script = ExtResource("1_omvyu")
 
 [node name="BaseIdleStrip9" type="Sprite2D" parent="."]

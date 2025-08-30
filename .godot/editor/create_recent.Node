@@ -1,9 +1,11 @@
-AnimatedSprite2D
+create_recent_node: AnimatedSprite2D
 Timer
 CollisionShape2D
 Area2D
 Sprite2D
 StaticBody2D
+AnimationPlayer
+Area2D
 Label
 TextureRect
 TextureButton
@@ -11,4 +13,5 @@ GridContainer
 Control
 CanvasLayer
 AnimationPlayer
+AnimatedSprite2D
 CharacterBody2D
