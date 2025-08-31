@@ -10,7 +10,7 @@ enum estado {
 #IA
 @export var identificacion_minima: float = 28.0
 @export var daño: int = 2
-@export var daño_intervalo: float = 0.3
+@export var daño_intervalo: float = 0.5
 var objetivo_arbol: Node2D = null
 @onready var deteccion = $Deteccion
 @onready var cadencia: Timer = $cadencia
@@ -59,22 +59,25 @@ func _physics_process(delta: float) -> void:
 			velocity = Vector2.ZERO
 		estado.Quieto:
 			velocity = Vector2.ZERO
+			_process_quieto(delta)
 	#movimiento
-	if is_moving:
+	if is_moving and estado_actual == estado.Patrullar:
 		var direction = (patrol_target - global_position).normalized()
 		velocity = direction * speed
 		if global_position.distance_to(patrol_target) < 10.0:
 			velocity = Vector2.ZERO
 			is_moving = false
 			timer.start()
-	else:
-		velocity = Vector2.ZERO
-	
 	move_and_slide()
 func _on_timer_timeout() -> void:
-	_selecciona_objetivo()
-	is_moving = true
+	if estado_actual == estado.Quieto:
+		_selecciona_objetivo()
+		is_moving = true
+		estado_actual = estado.Patrullar
 #maquina de estados"
+func _process_quieto(delta: float) -> void:
+	Vector2.ZERO
+	_play_anim("Quieto")
 func _process_patrullar(delta: float) -> void:
 	var direccion = patrol_target - global_position
 	if direccion.length() < 8.0:
@@ -90,6 +93,7 @@ func _process_al_arbol(delta: float) -> void:
 	var direccion = objetivo_arbol.global_position - global_position
 	var distancia = direccion.length()
 	if distancia <= identificacion_minima:
+		velocity = Vector2.ZERO
 		estado_actual = estado.Talar
 		_play_anim("talar")
 		cadencia.start()
@@ -103,11 +107,12 @@ func _on_deteccion_body_entered(body: Node2D) -> void:
 		if estado_actual == estado.Talar:
 			return
 		objetivo_arbol = body
+		is_moving = false
 		estado_actual = estado.Al_arbol #al otro arbol
 		if body.has_signal("caer"):
 			body.connect("caer", Callable(self, "_on_arbol_caida"))
 func _on_deteccion_body_exited(body: Node2D) -> void:
-	if body == objetivo_arbol:
+	if body == objetivo_arbol and estado_actual != estado.Talar:
 		_cancela_objetivo()
 #talar
 func _on_cadencia_tick () -> void: #se refiere a cada golpe del hacha
@@ -137,11 +142,11 @@ func _cancela_objetivo() -> void:
 			objetivo_arbol.disconnect("caer", Callable(self, "_on_arbol_caida"))
 		if objetivo_arbol.has_method("set"):
 			objetivo_arbol.set("ocupado", false)
-		objetivo_arbol = null
-		cadencia.stop()
-		_play_anim("Quieto")
-		_selecciona_objetivo()
-		estado_actual = estado.Patrullar
+	objetivo_arbol = null
+	cadencia.stop()
+	_play_anim("Quieto")
+	_selecciona_objetivo()
+	estado_actual = estado.Patrullar
 #animacion
 func _play_anim(name: String) -> void:
 	if anim:

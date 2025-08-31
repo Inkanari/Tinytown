@@ -207,8 +207,6 @@ shape = SubResource("CircleShape2D_qahio")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_qahio")
-animation = &"Quieto"
-frame = 3
-frame_progress = 0.668355
+animation = &"Minar"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
