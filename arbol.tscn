@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dicuvpjq2gorl"]
+[gd_scene load_steps=8 format=3 uid="uid://dicuvpjq2gorl"]
 
 [ext_resource type="Texture2D" uid="uid://cuno3o52xdcdb" path="res://Tilemap/Props/Tree.png" id="1_omjyp"]
 [ext_resource type="Script" uid="uid://hl8j4oa0vslq" path="res://arbol.gd" id="1_rcsqm"]
+[ext_resource type="PackedScene" uid="uid://c73cnt0qoty7w" path="res://manzana_item.tscn" id="2_a6x1h"]
 [ext_resource type="PackedScene" uid="uid://b1cjc663xtrsc" path="res://madera_item.tscn" id="2_ci4l3"]
 [ext_resource type="PackedScene" uid="uid://lvwl7373oomj" path="res://palito.tscn" id="2_utamm"]
 
@@ -17,6 +18,7 @@ collision_layer = 17
 collision_mask = 17
 script = ExtResource("1_rcsqm")
 vida = 4
+drop_manzana = ExtResource("2_a6x1h")
 drop_escene = ExtResource("2_utamm")
 drop_escene_2 = ExtResource("2_ci4l3")
 

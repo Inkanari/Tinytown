@@ -4,6 +4,7 @@ signal destruir
 var ocupado: bool = false
 
 @export var vida: int = 1
+@export var drop_manzana: PackedScene
 @export var drop_escene: PackedScene
 @export var drop_escene_2: PackedScene
 @export var flash_duracion: float = 0.2
@@ -43,6 +44,13 @@ func recibir_golpe(daño: int = 1):
 	if vida <= 0:
 		picar()
 func picar():
+	if drop_manzana:
+		if randf() < 0.3:
+			var manzana = drop_manzana.instantiate()
+			var x = randf_range(10, -10)
+			var y = randf_range(-10, 10)
+			manzana.position = position + Vector2(x, y)
+			get_parent().add_child(manzana)
 	if drop_escene:
 		emit_signal("destruir", self)
 		for i in range(4):

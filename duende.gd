@@ -11,7 +11,7 @@ enum estado {
 #vida
 @export var vida = 100
 @export var hambre = 200
-@export var comodidad = 500
+@export var comodidad = 1000
 var muero_de_hambre = false
 #IA
 @export var identificacion_minima: float = 28.0
@@ -39,11 +39,16 @@ func hambre_total():
 	if hambre <= 0:
 		muero_de_hambre = true
 		print("ya llego a 0")
+	else:
+		muero_de_hambre = false
+	if hambre <= -1:
+		Hambre.stop
+	else:
+		Hambre.start()
 func _on_hambre_timeout() -> void:
 	hambre -= 1
 	hambre_total()
 	vida_total()
-	print(hambre)
 	print(vida)
 func vida_total():
 	if muero_de_hambre == true:
@@ -54,6 +59,11 @@ func vida_total():
 		Hambre.wait_time = 1.0
 	if vida <= 0:
 		morir()
+func recuperar_vida(recuperacion):
+	if not vida >=180:
+		vida += recuperacion
+	print(vida)
+
 #movimiento 
 func _ready():
 	print("Restante:", Hambre.time_left)
@@ -185,5 +195,6 @@ func _play_anim(name: String) -> void:
 func morir():
 	print ("mori")
 	estado_actual = estado.morir
+	is_moving = false
 	_play_anim("morir")
 	

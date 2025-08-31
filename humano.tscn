@@ -11,6 +11,8 @@ region = Rect2(41, 23, 16, 16)
 size = Vector2(11, 16)
 
 [node name="Humano" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_s1053")
 
 [node name="BaseIdleStrip9" type="Sprite2D" parent="."]

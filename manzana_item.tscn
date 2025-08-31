@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://c73cnt0qoty7w"]
+
+[ext_resource type="Texture2D" uid="uid://i3rvrku3rud0" path="res://Recursos/resources_outlined.png" id="1_8u82c"]
+[ext_resource type="Script" uid="uid://c4l8nq1wxvqbe" path="res://manzana_item.gd" id="1_ml2bd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ml2bd"]
+atlas = ExtResource("1_8u82c")
+region = Rect2(50, 146, 20, 18)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o3b0t"]
+radius = 8.0
+
+[sub_resource type="Animation" id="Animation_8u82c"]
+resource_name = "movimiento"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -2), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ml2bd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o3b0t"]
+_data = {
+&"RESET": SubResource("Animation_ml2bd"),
+&"movimiento": SubResource("Animation_8u82c")
+}
+
+[node name="manzana_item" type="Area2D" groups=["alimento"]]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_ml2bd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.8, 0.8)
+texture = SubResource("AtlasTexture_ml2bd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_o3b0t")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_o3b0t")
+}
+autoplay = "movimiento"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
