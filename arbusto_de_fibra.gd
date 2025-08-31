@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-signal destruir
+signal destruir(piedra_node)
 var ocupado: bool = false
 
 @export var vida: int = 1
@@ -10,7 +10,8 @@ var ocupado: bool = false
 
 var shake_magnitud = 3 
 var shake_duracion = 0.1
-#efectos visuales
+
+
 func shake():
 	var tiempo = 0.0
 	var pos_original = position
@@ -21,11 +22,15 @@ func shake():
 		await get_tree().process_frame
 		tiempo += get_process_delta_time()
 	position = pos_original
+	
 func flash():
+	
 	var tiempo = 0.0
 	var duracion = flash_duracion
 	var color_original = modulate
 	var color_destello = Color(2, 2, 2)
+
+	
 	while tiempo < duracion:
 		var t = tiempo / duracion
 		var color = lerp(color_destello, color_original, t)
@@ -34,7 +39,7 @@ func flash():
 		tiempo += get_process_delta_time()
 	
 	modulate = color_original
-
+	
 func recibir_golpe(daño: int = 1):
 	await get_tree().create_timer(0.3).timeout
 	vida -= daño
@@ -42,17 +47,18 @@ func recibir_golpe(daño: int = 1):
 	flash()
 	if vida <= 0:
 		picar()
+	
 func picar():
 	if drop_escene:
 		emit_signal("destruir", self)
-		for i in range(4):
+		for i in range(3):
 			var loot = drop_escene.instantiate()
 			var x = randf_range(10, -10)
 			var y = randf_range(-10, 10)
 			loot.position = position + Vector2(x, y)
 			get_parent().add_child(loot)
 	if drop_escene_2:
-		for i in range(1):
+		for i in range(0):
 			var loot = drop_escene_2.instantiate()
 			var x = randf_range(10, -10)
 			var y = randf_range(-10, 10)

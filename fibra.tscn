@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://hq7ybmmbu78x"]
+
+[ext_resource type="Texture2D" uid="uid://i3rvrku3rud0" path="res://Recursos/resources_outlined.png" id="1_lxi0g"]
+[ext_resource type="Script" uid="uid://byji37g4k0age" path="res://fibra.gd" id="1_ww6tp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ww6tp"]
+atlas = ExtResource("1_lxi0g")
+region = Rect2(24, 216, 24, 24)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_18dgh"]
+radius = 12.0416
+
+[sub_resource type="Animation" id="Animation_2hfxs"]
+resource_name = "movimiento"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -5), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_h7r6h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4q788"]
+_data = {
+&"RESET": SubResource("Animation_h7r6h"),
+&"movimiento": SubResource("Animation_2hfxs")
+}
+
+[node name="fibra" type="Area2D"]
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_ww6tp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+scale = Vector2(0.7, 0.7)
+texture = SubResource("AtlasTexture_ww6tp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.7, 0.7)
+shape = SubResource("CircleShape2D_18dgh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_4q788")
+}
+autoplay = "movimiento"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

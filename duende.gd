@@ -5,14 +5,21 @@ enum estado {
 	Quieto,
 	Patrullar,
 	Al_arbol,
-	Talar
+	Talar,
+	morir
 }
+#vida
+@export var vida = 100
+@export var hambre = 200
+@export var comodidad = 500
+var muero_de_hambre = false
 #IA
 @export var identificacion_minima: float = 28.0
 @export var daño: int = 2
 @export var daño_intervalo: float = 0.5
 var objetivo_arbol: Node2D = null
 @onready var deteccion = $Deteccion
+@onready var Hambre = $hambre
 @onready var cadencia: Timer = $cadencia
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D 
 var rng := RandomNumberGenerator.new() #ojo aqui con ":"
@@ -28,10 +35,31 @@ var is_moving = false
 func _set_anim(v):
 	anim = v
 
+func hambre_total():
+	if hambre <= 0:
+		muero_de_hambre = true
+		print("ya llego a 0")
+func _on_hambre_timeout() -> void:
+	hambre -= 1
+	hambre_total()
+	vida_total()
+	print(hambre)
+	print(vida)
+func vida_total():
+	if muero_de_hambre == true:
+		Hambre.wait_time = 0.5
+		Hambre.start()
+		vida -= 1
+	else:
+		Hambre.wait_time = 1.0
+	if vida <= 0:
+		morir()
 #movimiento 
 func _ready():
+	print("Restante:", Hambre.time_left)
 	#movimiento
 	initial_position = global_position
+	estado_actual = estado.Quieto
 	_selecciona_objetivo()
 	timer.wait_time = pause_time
 	timer.one_shot = true
@@ -60,6 +88,8 @@ func _physics_process(delta: float) -> void:
 		estado.Quieto:
 			velocity = Vector2.ZERO
 			_process_quieto(delta)
+		estado.morir:
+			velocity = Vector2.ZERO
 	#movimiento
 	if is_moving and estado_actual == estado.Patrullar:
 		var direction = (patrol_target - global_position).normalized()
@@ -152,3 +182,8 @@ func _play_anim(name: String) -> void:
 	if anim:
 		if anim.animation != name:
 			anim.play(name)
+func morir():
+	print ("mori")
+	estado_actual = estado.morir
+	_play_anim("morir")
+	

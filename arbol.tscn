@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dicuvpjq2gorl"]
+[gd_scene load_steps=7 format=3 uid="uid://dicuvpjq2gorl"]
 
 [ext_resource type="Texture2D" uid="uid://cuno3o52xdcdb" path="res://Tilemap/Props/Tree.png" id="1_omjyp"]
 [ext_resource type="Script" uid="uid://hl8j4oa0vslq" path="res://arbol.gd" id="1_rcsqm"]
 [ext_resource type="PackedScene" uid="uid://b1cjc663xtrsc" path="res://madera_item.tscn" id="2_ci4l3"]
+[ext_resource type="PackedScene" uid="uid://lvwl7373oomj" path="res://palito.tscn" id="2_utamm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rcsqm"]
 atlas = ExtResource("1_omjyp")
@@ -15,7 +16,9 @@ size = Vector2(14, 10)
 collision_layer = 17
 collision_mask = 17
 script = ExtResource("1_rcsqm")
-drop_escene = ExtResource("2_ci4l3")
+vida = 4
+drop_escene = ExtResource("2_utamm")
+drop_escene_2 = ExtResource("2_ci4l3")
 
 [node name="Tree" type="Sprite2D" parent="."]
 texture_filter = 1

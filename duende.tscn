@@ -1,9 +1,10 @@
-[gd_scene load_steps=35 format=3 uid="uid://b5ri30hqug6hi"]
+[gd_scene load_steps=45 format=3 uid="uid://b5ri30hqug6hi"]
 
 [ext_resource type="Texture2D" uid="uid://75vfuubgjrem" path="res://personaje/Goblin/PNG/spr_idle_strip9.png" id="1_gjbqq"]
 [ext_resource type="Script" uid="uid://cc5gdmx3auqe" path="res://duende.gd" id="1_hn6ox"]
 [ext_resource type="Texture2D" uid="uid://di7rrptv44kir" path="res://personaje/Goblin/PNG/spr_axe_strip10.png" id="3_ilh26"]
 [ext_resource type="Texture2D" uid="uid://di6tuhg82bcq3" path="res://personaje/Goblin/PNG/spr_walk_strip8.png" id="3_ll811"]
+[ext_resource type="Texture2D" uid="uid://xnpp1x1nd2oj" path="res://personaje/Goblin/PNG/spr_death_strip13.png" id="4_52d4b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hn6ox"]
 atlas = ExtResource("1_gjbqq")
@@ -78,6 +79,42 @@ region = Rect2(576, 0, 96, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_nika0"]
 atlas = ExtResource("3_ll811")
 region = Rect2(672, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rniq"]
+atlas = ExtResource("4_52d4b")
+region = Rect2(0, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktogu"]
+atlas = ExtResource("4_52d4b")
+region = Rect2(96, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfx17"]
+atlas = ExtResource("4_52d4b")
+region = Rect2(192, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe658"]
+atlas = ExtResource("4_52d4b")
+region = Rect2(288, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xniwr"]
+atlas = ExtResource("4_52d4b")
+region = Rect2(384, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmwmm"]
+atlas = ExtResource("4_52d4b")
+region = Rect2(480, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iex05"]
+atlas = ExtResource("4_52d4b")
+region = Rect2(576, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12f32"]
+atlas = ExtResource("4_52d4b")
+region = Rect2(672, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4xuo"]
+atlas = ExtResource("4_52d4b")
+region = Rect2(768, 0, 96, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ll811"]
 atlas = ExtResource("3_ilh26")
@@ -186,6 +223,38 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_5rniq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktogu")
+}, {
+"duration": 1.2,
+"texture": SubResource("AtlasTexture_nfx17")
+}, {
+"duration": 1.1,
+"texture": SubResource("AtlasTexture_qe658")
+}, {
+"duration": 1.1,
+"texture": SubResource("AtlasTexture_xniwr")
+}, {
+"duration": 0.9,
+"texture": SubResource("AtlasTexture_tmwmm")
+}, {
+"duration": 0.9,
+"texture": SubResource("AtlasTexture_iex05")
+}, {
+"duration": 0.9,
+"texture": SubResource("AtlasTexture_12f32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4xuo")
+}],
+"loop": false,
+"name": &"morir",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ll811")
 }, {
 "duration": 1.0,
@@ -235,6 +304,10 @@ shape = SubResource("RectangleShape2D_ilh26")
 
 [node name="Timer" type="Timer" parent="."]
 
+[node name="hambre" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
 [node name="cadencia" type="Timer" parent="."]
 
 [node name="Deteccion" type="Area2D" parent="."]
@@ -247,8 +320,9 @@ debug_color = Color(0.748798, 0.202974, 1, 0.42)
 texture_filter = 1
 texture_repeat = 1
 sprite_frames = SubResource("SpriteFrames_hn6ox")
-animation = &"talar"
+animation = &"morir"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="hambre" to="." method="_on_hambre_timeout"]
 [connection signal="body_entered" from="Deteccion" to="." method="_on_deteccion_body_entered"]
 [connection signal="body_exited" from="Deteccion" to="." method="_on_deteccion_body_exited"]

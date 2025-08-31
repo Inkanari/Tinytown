@@ -276,3 +276,36 @@ theme_override_colors/font_shadow_color = Color(0.000113828, 0.000113828, 0.0001
 theme_override_fonts/font = ExtResource("4_r7ghh")
 theme_override_font_sizes/font_size = 48
 text = "X "
+
+[node name="palito" type="Label" parent="." groups=["cantidad"]]
+offset_left = 168.0
+offset_top = 344.0
+offset_right = 368.0
+offset_bottom = 392.0
+theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
+theme_override_colors/font_shadow_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
+theme_override_fonts/font = ExtResource("4_r7ghh")
+theme_override_font_sizes/font_size = 48
+text = "X "
+
+[node name="arcilla" type="Label" parent="." groups=["cantidad"]]
+offset_left = 168.0
+offset_top = 416.0
+offset_right = 368.0
+offset_bottom = 464.0
+theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
+theme_override_colors/font_shadow_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
+theme_override_fonts/font = ExtResource("4_r7ghh")
+theme_override_font_sizes/font_size = 48
+text = "X "
+
+[node name="fibra" type="Label" parent="." groups=["cantidad"]]
+offset_left = 168.0
+offset_top = 480.0
+offset_right = 368.0
+offset_bottom = 528.0
+theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
+theme_override_colors/font_shadow_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
+theme_override_fonts/font = ExtResource("4_r7ghh")
+theme_override_font_sizes/font_size = 48
+text = "X "
