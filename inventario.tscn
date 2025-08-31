@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://r6wnasu2cbal"]
+[gd_scene load_steps=23 format=3 uid="uid://r6wnasu2cbal"]
 
 [ext_resource type="Script" uid="uid://x4x7y31wgpvj" path="res://inventario.gd" id="1_bmj48"]
 [ext_resource type="Texture2D" uid="uid://b6f6w6vqyya0q" path="res://UI/UI_TravelBook_Spritesheet01a.png" id="1_xf715"]
@@ -46,17 +46,33 @@ region = Rect2(99, 102, 18, 11)
 atlas = ExtResource("1_xf715")
 region = Rect2(65, 289, 30, 30)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1pxc"]
+atlas = ExtResource("2_bnejn")
+region = Rect2(98, 3, 18, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_75bb5"]
 atlas = ExtResource("1_xf715")
 region = Rect2(65, 289, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydlyg"]
+atlas = ExtResource("2_bnejn")
+region = Rect2(49, 2, 22, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lm7pk"]
 atlas = ExtResource("1_xf715")
 region = Rect2(65, 289, 30, 30)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_veg21"]
+atlas = ExtResource("2_bnejn")
+region = Rect2(121, 6, 21, 13)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_awygy"]
 atlas = ExtResource("1_xf715")
 region = Rect2(65, 289, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxvwu"]
+atlas = ExtResource("2_bnejn")
+region = Rect2(24, 217, 22, 21)
 
 [node name="Inventario" type="CanvasLayer"]
 script = ExtResource("1_bmj48")
@@ -165,11 +181,29 @@ layout_mode = 2
 texture = SubResource("AtlasTexture_hx4w0")
 stretch_mode = 1
 
+[node name="TextureRect" type="TextureRect" parent="Control/GridContainer/casilla 4"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 56.0
+offset_bottom = 56.0
+texture = SubResource("AtlasTexture_q1pxc")
+
 [node name="casilla 5" type="TextureRect" parent="Control/GridContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = SubResource("AtlasTexture_75bb5")
+
+[node name="TextureRect" type="TextureRect" parent="Control/GridContainer/casilla 5"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 56.0
+offset_bottom = 56.0
+texture = SubResource("AtlasTexture_ydlyg")
 
 [node name="casilla 6" type="TextureRect" parent="Control/GridContainer"]
 texture_filter = 1
@@ -177,18 +211,66 @@ custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = SubResource("AtlasTexture_lm7pk")
 
+[node name="TextureRect" type="TextureRect" parent="Control/GridContainer/casilla 6"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 56.0
+offset_bottom = 56.0
+texture = SubResource("AtlasTexture_veg21")
+
 [node name="casilla 7" type="TextureRect" parent="Control/GridContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = SubResource("AtlasTexture_awygy")
 
-[node name="Label" type="Label" parent="Control"]
+[node name="TextureRect2" type="TextureRect" parent="Control/GridContainer/casilla 7"]
 layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 56.0
+offset_bottom = 56.0
+texture = SubResource("AtlasTexture_fxvwu")
+
+[node name="madera" type="Label" parent="." groups=["cantidad"]]
 offset_left = 168.0
 offset_top = 72.0
-offset_right = 236.0
-offset_bottom = 107.0
+offset_right = 416.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
+theme_override_colors/font_shadow_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
+theme_override_fonts/font = ExtResource("4_r7ghh")
+theme_override_font_sizes/font_size = 48
+text = "X "
+
+[node name="gajo" type="Label" parent="." groups=["cantidad"]]
+offset_left = 168.0
+offset_top = 144.0
+offset_right = 368.0
+offset_bottom = 192.0
+theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
+theme_override_colors/font_shadow_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
+theme_override_fonts/font = ExtResource("4_r7ghh")
+theme_override_font_sizes/font_size = 48
+text = "X "
+
+[node name="piedra_p" type="Label" parent="." groups=["cantidad"]]
+offset_left = 168.0
+offset_top = 208.0
+offset_right = 488.0
+offset_bottom = 256.0
+theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
+theme_override_colors/font_shadow_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
+theme_override_fonts/font = ExtResource("4_r7ghh")
+theme_override_font_sizes/font_size = 48
+text = "X "
+
+[node name="carbon" type="Label" parent="." groups=["cantidad"]]
+offset_left = 168.0
+offset_top = 272.0
+offset_right = 368.0
+offset_bottom = 320.0
 theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
 theme_override_colors/font_shadow_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
 theme_override_fonts/font = ExtResource("4_r7ghh")

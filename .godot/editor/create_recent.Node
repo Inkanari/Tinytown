@@ -1,12 +1,12 @@
+TextureRect
+AnimationPlayer
 CollisionShape2D
 Area2D
 AnimatedSprite2D
 Timer
 Sprite2D
 StaticBody2D
-AnimationPlayer
 Label
-TextureRect
 TextureButton
 GridContainer
 Control

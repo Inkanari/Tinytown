@@ -1,9 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://benf3qf2xapsw"]
+[gd_scene load_steps=7 format=3 uid="uid://benf3qf2xapsw"]
 
+[ext_resource type="Script" uid="uid://cjs3efnu2h182" path="res://carbon_item.gd" id="1_bhigd"]
 [ext_resource type="Texture2D" uid="uid://dnl3lbaaa184e" path="res://Recursos/resources_basic.png" id="1_d8cpe"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_bhigd"]
-radius = 9.0
 
 [sub_resource type="Animation" id="Animation_q6wnx"]
 length = 0.001
@@ -42,7 +40,11 @@ _data = {
 &"carbon": SubResource("Animation_dry56")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_bhigd"]
+radius = 9.0
+
 [node name="carbon_item" type="Area2D"]
+script = ExtResource("1_bhigd")
 
 [node name="carbon" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -51,13 +53,16 @@ texture = ExtResource("1_d8cpe")
 region_enabled = true
 region_rect = Rect2(98, 3, 18, 16)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="carbon"]
-position = Vector2(0, 0.737328)
-shape = SubResource("CircleShape2D_bhigd")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_fom31")
 }
 autoplay = "carbon"
 speed_scale = 1.127
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.442397)
+scale = Vector2(0.6, 0.6)
+shape = SubResource("CircleShape2D_bhigd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
