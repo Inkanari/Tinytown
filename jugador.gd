@@ -3,6 +3,10 @@ extends CharacterBody2D
 @export var speed = 120
 @export var daño: int = 1
 
+var cursor = load("res://UI/cursor_marron.png")
+func _ready() -> void:
+	Input.set_custom_mouse_cursor(cursor)
+
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interactuar"):
 		Global.emit_signal("interactuar")
