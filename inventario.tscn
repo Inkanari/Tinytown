@@ -229,6 +229,7 @@ offset_bottom = 34.0
 texture = SubResource("AtlasTexture_v5hsu")
 
 [node name="dinero" type="Label" parent="Control/Dinero" groups=["cantidad"]]
+layout_mode = 0
 offset_left = 72.0
 offset_top = 15.0
 offset_right = 264.0
