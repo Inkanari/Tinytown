@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://q85iosfg0so2"]
+[gd_scene load_steps=50 format=4 uid="uid://q85iosfg0so2"]
 
 [ext_resource type="Texture2D" uid="uid://caxlfuytmits3" path="res://Tilemap/Tileset/dirt.png" id="1_8qe2h"]
 [ext_resource type="Texture2D" uid="uid://bpgye5pws45o6" path="res://Tilemap/Tileset/sand.png" id="2_g14jh"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://dxbq7r5fbuwis" path="res://carbon_lv_2.tscn" id="24_sd6s8"]
 [ext_resource type="PackedScene" uid="uid://b418ypd53pc0h" path="res://esqueleto.tscn" id="25_kvb3i"]
 [ext_resource type="PackedScene" uid="uid://clhj33cvniq70" path="res://arbusto_de_fibra.tscn" id="26_q8h3q"]
+[ext_resource type="PackedScene" uid="uid://dis37gdxasu" path="res://cofre.tscn" id="27_ag1ng"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_46lw5"]
 texture = ExtResource("1_8qe2h")
@@ -332,22 +333,38 @@ sources/1 = SubResource("TileSetAtlasSource_rt3ku")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x68d4"]
 texture = ExtResource("11_aa1rv")
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.179859, 0, 8, -0.179857, 8, 8, -0.179859, 8)
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0.179859, 8, -0.179857, 8, 8, -8, 8)
 2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, -0.179859, 0.179859, 0, 8, -8, 8)
 3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.179859, 8, 8, 8, 8, -0.179859, 0.179859, -0.179859)
 4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.179859, 8, -8, 8, -8, -0.179859, -0.179859, -0.179859)
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.179859, -8, 8, -8, 8, 8, 0.179859, 8)
 1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -0.179859, -8, 0, 8, -8, 8)
 3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.179859, -8, 8, -8, 8, 8, 0.179859, 8)
 4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.179859, -8, -8, -8, -8, 8, -0.179859, 8)
 0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.179859, -8, 8, -8, 8, 0, 0.179859, -0.179857)
 1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 0, -8, 0.179859)
 2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -0.179859, -8, 0, -0.539576, -8, 0.179859)
 3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.179859, -8, 8, -8, 8, 0.179859, 0.179859, 0.179859)
 4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.179859, -8, -8, -8, -8, 0.179859, -0.179859, 0.179859)
 
 [sub_resource type="TileSet" id="TileSet_qw27b"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_x68d4")
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q8h3q"]
@@ -2444,3 +2461,6 @@ position = Vector2(251, 79)
 
 [node name="Arbusto_de_fibra" parent="." instance=ExtResource("26_q8h3q")]
 position = Vector2(-141, 88)
+
+[node name="cofre" parent="." instance=ExtResource("27_ag1ng")]
+position = Vector2(39, 81)

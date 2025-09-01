@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=3 uid="uid://dy4tlr3e6qyy1"]
+
+[ext_resource type="Script" uid="uid://hwgj4u50tu5g" path="res://dinero_item.gd" id="1_gcmfw"]
+[ext_resource type="Texture2D" uid="uid://b8jpe76o2nha6" path="res://Estructuras/spr_tileset_sunnysideworld_16px.png" id="1_q15vr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcmfw"]
+atlas = ExtResource("1_q15vr")
+region = Rect2(661, 485, 6, 6)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5fak5"]
+radius = 4.0
+
+[sub_resource type="Animation" id="Animation_gcmfw"]
+resource_name = "movimiento"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("moneda:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -3), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5fak5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("moneda:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0bv1u"]
+_data = {
+&"RESET": SubResource("Animation_5fak5"),
+&"movimiento": SubResource("Animation_gcmfw")
+}
+
+[node name="dinero_item" type="Area2D"]
+script = ExtResource("1_gcmfw")
+
+[node name="moneda" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("AtlasTexture_gcmfw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5fak5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0bv1u")
+}
+autoplay = "movimiento"
+speed_scale = 1.2
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -4,11 +4,14 @@ extends CharacterBody2D
 @export var daño: int = 1
 
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("interactuar"):
+		Global.emit_signal("interactuar")
 	if Input.is_action_just_pressed("UI_single"):
+		print("inventario")
 		abrir_inventario()
 #inventario
 func abrir_inventario():
-	$"../../Inventario".visible = not $"../../Inventario".visible
+	$"../Inventario".visible = not $"../Inventario".visible
 #daño
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("golpe"):

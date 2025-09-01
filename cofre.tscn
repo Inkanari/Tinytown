@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://dis37gdxasu"]
+
+[ext_resource type="Texture2D" uid="uid://b8jpe76o2nha6" path="res://Estructuras/spr_tileset_sunnysideworld_16px.png" id="1_a8yx5"]
+[ext_resource type="Script" uid="uid://bnypq7qgpw1q0" path="res://cofre.gd" id="1_ynwns"]
+[ext_resource type="PackedScene" uid="uid://dy4tlr3e6qyy1" path="res://dinero_item.tscn" id="2_2td3n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynwns"]
+atlas = ExtResource("1_a8yx5")
+region = Rect2(609, 480, 15, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2td3n"]
+size = Vector2(14, 8)
+
+[node name="cofre" type="StaticBody2D"]
+script = ExtResource("1_ynwns")
+drop_escene = ExtResource("2_2td3n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("AtlasTexture_ynwns")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_2td3n")

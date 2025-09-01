@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://r6wnasu2cbal"]
+[gd_scene load_steps=39 format=3 uid="uid://r6wnasu2cbal"]
 
 [ext_resource type="Script" uid="uid://x4x7y31wgpvj" path="res://inventario.gd" id="1_bmj48"]
 [ext_resource type="Texture2D" uid="uid://b6f6w6vqyya0q" path="res://UI/UI_TravelBook_Spritesheet01a.png" id="1_xf715"]
@@ -55,6 +55,10 @@ region = Rect2(432, 32, 104, 147)
 [sub_resource type="AtlasTexture" id="AtlasTexture_4d3my"]
 atlas = ExtResource("3_r7ghh")
 region = Rect2(641, 479, 14, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5hsu"]
+atlas = ExtResource("1_xf715")
+region = Rect2(65, 263, 30, 2)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bmj48"]
 atlas = ExtResource("1_xf715")
@@ -207,7 +211,7 @@ offset_right = 1088.0
 offset_bottom = 600.0
 texture = SubResource("AtlasTexture_r7ghh")
 
-[node name="dinero" type="TextureRect" parent="Control"]
+[node name="Dinero" type="TextureRect" parent="Control"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 72.0
@@ -215,6 +219,24 @@ offset_top = 528.0
 offset_right = 128.0
 offset_bottom = 568.0
 texture = SubResource("AtlasTexture_4d3my")
+
+[node name="TextureRect" type="TextureRect" parent="Control/Dinero"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 32.0
+offset_right = 264.0
+offset_bottom = 34.0
+texture = SubResource("AtlasTexture_v5hsu")
+
+[node name="dinero" type="Label" parent="Control/Dinero" groups=["cantidad"]]
+offset_left = 72.0
+offset_top = 15.0
+offset_right = 264.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0.226707, 0.226707, 0.226707, 1)
+theme_override_colors/font_shadow_color = Color(0.0646965, 0.0646965, 0.0646965, 1)
+theme_override_fonts/font = ExtResource("4_r7ghh")
+text = "x"
 
 [node name="materiales_basicos" type="GridContainer" parent="Control"]
 visible = false
