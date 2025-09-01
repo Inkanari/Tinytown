@@ -9,5 +9,5 @@ func _on_body_entered(body: Node2D) -> void:
 		print("el duende tomo la manzana")
 		body.recuperar_vida(recuperacion)
 	if body.name == "Jugador":
-		emit_signal(item_name, amount)
+		Inventario.agregar_item(item_name, amount)
 	queue_free()

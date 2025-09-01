@@ -23,6 +23,7 @@ Inventario="*res://inventario.gd"
 arboles="todos los arboles"
 piedras=""
 cantidad="cantidad"
+alimento=""
 
 [input]
 

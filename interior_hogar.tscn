@@ -1,10 +1,8 @@
-[gd_scene load_steps=10 format=4 uid="uid://dob2w4fb5xpw5"]
+[gd_scene load_steps=8 format=4 uid="uid://dob2w4fb5xpw5"]
 
 [ext_resource type="Texture2D" uid="uid://dpk4i0plhqyx0" path="res://Interiores/Plastic-Interiors-1.0/Images/floor.png" id="1_l0fqn"]
 [ext_resource type="Texture2D" uid="uid://blux6mfg342ru" path="res://Interiores/Plastic-Interiors-1.0/Images/walls.png" id="2_e5w6r"]
 [ext_resource type="PackedScene" uid="uid://ds3sxalepapi6" path="res://jugador.tscn" id="3_2g7wh"]
-[ext_resource type="PackedScene" uid="uid://b418ypd53pc0h" path="res://esqueleto.tscn" id="4_s6c7w"]
-[ext_resource type="PackedScene" uid="uid://b5ri30hqug6hi" path="res://duende.tscn" id="5_s6c7w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2g7wh"]
 texture = ExtResource("1_l0fqn")
@@ -161,9 +159,3 @@ tile_set = SubResource("TileSet_kor4c")
 
 [node name="Jugador" parent="." instance=ExtResource("3_2g7wh")]
 position = Vector2(538, 266)
-
-[node name="Esqueleto" parent="." instance=ExtResource("4_s6c7w")]
-position = Vector2(601, 269)
-
-[node name="Duende" parent="." instance=ExtResource("5_s6c7w")]
-position = Vector2(485, 262)

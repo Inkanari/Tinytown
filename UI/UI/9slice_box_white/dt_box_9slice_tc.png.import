@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnl3lbaaa184e"
-path="res://.godot/imported/resources_basic.png-301bf495de99f1e0a065f178ebc59793.ctex"
+uid="uid://cil06ttlgwjb3"
+path="res://.godot/imported/dt_box_9slice_tc.png-71b91c320d6cf3de87d97624e8efb41d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/resources_basic.png"
-dest_files=["res://.godot/imported/resources_basic.png-301bf495de99f1e0a065f178ebc59793.ctex"]
+source_file="res://UI/UI/9slice_box_white/dt_box_9slice_tc.png"
+dest_files=["res://.godot/imported/dt_box_9slice_tc.png-71b91c320d6cf3de87d97624e8efb41d.ctex"]
 
 [params]
 

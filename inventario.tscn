@@ -1,14 +1,48 @@
-[gd_scene load_steps=23 format=3 uid="uid://r6wnasu2cbal"]
+[gd_scene load_steps=38 format=3 uid="uid://r6wnasu2cbal"]
 
 [ext_resource type="Script" uid="uid://x4x7y31wgpvj" path="res://inventario.gd" id="1_bmj48"]
 [ext_resource type="Texture2D" uid="uid://b6f6w6vqyya0q" path="res://UI/UI_TravelBook_Spritesheet01a.png" id="1_xf715"]
-[ext_resource type="Texture2D" uid="uid://dnl3lbaaa184e" path="res://Recursos/resources_basic.png" id="2_bnejn"]
+[ext_resource type="Texture2D" uid="uid://x7n0r8q7krhn" path="res://Recursos/resources_neutral_bg.png" id="3_3nfo0"]
+[ext_resource type="Texture2D" uid="uid://cpsalgckl2cgt" path="res://UI/UI_TravelBookAnimated_Spritesheet01a.png" id="3_3utbr"]
 [ext_resource type="Texture2D" uid="uid://b8jpe76o2nha6" path="res://Estructuras/spr_tileset_sunnysideworld_16px.png" id="3_r7ghh"]
 [ext_resource type="FontFile" uid="uid://dpefntvduatg2" path="res://texto/Bongo-8 Mono.ttf" id="4_r7ghh"]
+[ext_resource type="Texture2D" uid="uid://babmtngh6uq7" path="res://Recursos/resources_red_bg.png" id="5_3utbr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_smvdb"]
 atlas = ExtResource("1_xf715")
 region = Rect2(64, 32, 224, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56krm"]
+atlas = ExtResource("1_xf715")
+region = Rect2(70, 273, 20, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_508hb"]
+atlas = ExtResource("3_3utbr")
+region = Rect2(38, 111, 20, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56fu1"]
+atlas = ExtResource("3_3utbr")
+region = Rect2(38, 72, 20, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnmuq"]
+atlas = ExtResource("3_3nfo0")
+region = Rect2(24, 2, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7wva"]
+atlas = ExtResource("1_xf715")
+region = Rect2(70, 273, 20, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1prk"]
+atlas = ExtResource("3_3utbr")
+region = Rect2(38, 111, 20, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64l3q"]
+atlas = ExtResource("3_3utbr")
+region = Rect2(38, 72, 20, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7m34i"]
+atlas = ExtResource("3_3nfo0")
+region = Rect2(26, 173, 20, 15)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bnejn"]
 atlas = ExtResource("1_xf715")
@@ -18,12 +52,16 @@ region = Rect2(304, 32, 104, 147)
 atlas = ExtResource("1_xf715")
 region = Rect2(432, 32, 104, 147)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4d3my"]
+atlas = ExtResource("3_r7ghh")
+region = Rect2(641, 479, 14, 9)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_bmj48"]
 atlas = ExtResource("1_xf715")
 region = Rect2(65, 289, 30, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3utbr"]
-atlas = ExtResource("2_bnejn")
+atlas = ExtResource("5_3utbr")
 region = Rect2(2, 2, 20, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3nfo0"]
@@ -39,7 +77,7 @@ atlas = ExtResource("1_xf715")
 region = Rect2(65, 289, 30, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xxr1x"]
-atlas = ExtResource("2_bnejn")
+atlas = ExtResource("5_3utbr")
 region = Rect2(99, 102, 18, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hx4w0"]
@@ -47,7 +85,7 @@ atlas = ExtResource("1_xf715")
 region = Rect2(65, 289, 30, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q1pxc"]
-atlas = ExtResource("2_bnejn")
+atlas = ExtResource("5_3utbr")
 region = Rect2(98, 3, 18, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_75bb5"]
@@ -55,7 +93,7 @@ atlas = ExtResource("1_xf715")
 region = Rect2(65, 289, 30, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ydlyg"]
-atlas = ExtResource("2_bnejn")
+atlas = ExtResource("5_3utbr")
 region = Rect2(49, 2, 22, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lm7pk"]
@@ -63,7 +101,7 @@ atlas = ExtResource("1_xf715")
 region = Rect2(65, 289, 30, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_veg21"]
-atlas = ExtResource("2_bnejn")
+atlas = ExtResource("5_3utbr")
 region = Rect2(121, 6, 21, 13)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_awygy"]
@@ -71,8 +109,24 @@ atlas = ExtResource("1_xf715")
 region = Rect2(65, 289, 30, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fxvwu"]
-atlas = ExtResource("2_bnejn")
+atlas = ExtResource("5_3utbr")
 region = Rect2(24, 217, 22, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rfm5"]
+atlas = ExtResource("1_xf715")
+region = Rect2(65, 289, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccqxf"]
+atlas = ExtResource("1_xf715")
+region = Rect2(65, 353, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8icch"]
+atlas = ExtResource("1_xf715")
+region = Rect2(65, 321, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u38qt"]
+atlas = ExtResource("5_3utbr")
+region = Rect2(50, 146, 20, 20)
 
 [node name="Inventario" type="CanvasLayer"]
 script = ExtResource("1_bmj48")
@@ -89,6 +143,49 @@ layout_mode = 0
 offset_right = 1156.0
 offset_bottom = 645.0
 texture = SubResource("AtlasTexture_smvdb")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+custom_minimum_size = Vector2(0, -100)
+layout_mode = 0
+offset_left = 920.0
+offset_top = 16.0
+offset_right = 1004.0
+offset_bottom = 56.0
+
+[node name="materiales_basicos" type="TextureButton" parent="Control/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(36, 0)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_56krm")
+texture_pressed = SubResource("AtlasTexture_508hb")
+texture_hover = SubResource("AtlasTexture_56fu1")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer/materiales_basicos"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 34.0
+offset_bottom = 38.0
+texture = SubResource("AtlasTexture_tnmuq")
+stretch_mode = 5
+
+[node name="alimentos" type="TextureButton" parent="Control/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(40, 32)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_u7wva")
+texture_pressed = SubResource("AtlasTexture_k1prk")
+texture_hover = SubResource("AtlasTexture_64l3q")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer/alimentos"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 35.0
+offset_bottom = 35.0
+texture = SubResource("AtlasTexture_7m34i")
 
 [node name="TextureRect2" type="TextureRect" parent="Control"]
 texture_filter = 1
@@ -110,7 +207,17 @@ offset_right = 1088.0
 offset_bottom = 600.0
 texture = SubResource("AtlasTexture_r7ghh")
 
-[node name="GridContainer" type="GridContainer" parent="Control"]
+[node name="dinero" type="TextureRect" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 72.0
+offset_top = 528.0
+offset_right = 128.0
+offset_bottom = 568.0
+texture = SubResource("AtlasTexture_4d3my")
+
+[node name="materiales_basicos" type="GridContainer" parent="Control"]
+visible = false
 custom_minimum_size = Vector2(94, 94)
 layout_mode = 1
 anchors_preset = -1
@@ -119,18 +226,18 @@ anchor_bottom = 16.0
 offset_left = 80.0
 offset_top = 64.0
 offset_right = -592.0
-offset_bottom = -80.0
+offset_bottom = -104.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="casillla 1" type="TextureRect" parent="Control/GridContainer"]
+[node name="Madera" type="TextureRect" parent="Control/materiales_basicos"]
 texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = SubResource("AtlasTexture_bmj48")
 stretch_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="Control/GridContainer/casillla 1"]
+[node name="TextureRect" type="TextureRect" parent="Control/materiales_basicos/Madera"]
 texture_filter = 1
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
@@ -141,14 +248,26 @@ offset_bottom = 56.0
 texture = SubResource("AtlasTexture_3utbr")
 flip_h = true
 
-[node name="casilla 2" type="TextureRect" parent="Control/GridContainer"]
+[node name="madera" type="Label" parent="Control/materiales_basicos/Madera" groups=["cantidad"]]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 8.0
+offset_right = 336.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
+theme_override_colors/font_shadow_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
+theme_override_fonts/font = ExtResource("4_r7ghh")
+theme_override_font_sizes/font_size = 48
+text = "X "
+
+[node name="Gajo" type="TextureRect" parent="Control/materiales_basicos"]
 texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = SubResource("AtlasTexture_3nfo0")
 stretch_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="Control/GridContainer/casilla 2"]
+[node name="TextureRect" type="TextureRect" parent="Control/materiales_basicos/Gajo"]
 texture_filter = 1
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
@@ -158,14 +277,26 @@ offset_right = 57.0
 offset_bottom = 57.0
 texture = SubResource("AtlasTexture_w7ev3")
 
-[node name="casilla 3" type="TextureRect" parent="Control/GridContainer"]
+[node name="gajo" type="Label" parent="Control/materiales_basicos/Gajo" groups=["cantidad"]]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 12.0
+offset_right = 288.0
+offset_bottom = 60.0
+theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
+theme_override_colors/font_shadow_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
+theme_override_fonts/font = ExtResource("4_r7ghh")
+theme_override_font_sizes/font_size = 48
+text = "X "
+
+[node name="Piedra" type="TextureRect" parent="Control/materiales_basicos"]
 texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = SubResource("AtlasTexture_aaktn")
 stretch_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="Control/GridContainer/casilla 3"]
+[node name="TextureRect" type="TextureRect" parent="Control/materiales_basicos/Piedra"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 8.0
@@ -174,14 +305,26 @@ offset_right = 56.0
 offset_bottom = 54.0
 texture = SubResource("AtlasTexture_xxr1x")
 
-[node name="casilla 4" type="TextureRect" parent="Control/GridContainer"]
+[node name="piedra_p" type="Label" parent="Control/materiales_basicos/Piedra" groups=["cantidad"]]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 8.0
+offset_right = 408.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
+theme_override_colors/font_shadow_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
+theme_override_fonts/font = ExtResource("4_r7ghh")
+theme_override_font_sizes/font_size = 48
+text = "X "
+
+[node name="Carbon" type="TextureRect" parent="Control/materiales_basicos"]
 texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = SubResource("AtlasTexture_hx4w0")
 stretch_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="Control/GridContainer/casilla 4"]
+[node name="TextureRect" type="TextureRect" parent="Control/materiales_basicos/Carbon"]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
@@ -189,13 +332,25 @@ offset_right = 56.0
 offset_bottom = 56.0
 texture = SubResource("AtlasTexture_q1pxc")
 
-[node name="casilla 5" type="TextureRect" parent="Control/GridContainer"]
+[node name="carbon" type="Label" parent="Control/materiales_basicos/Carbon" groups=["cantidad"]]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 4.0
+offset_right = 288.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
+theme_override_colors/font_shadow_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
+theme_override_fonts/font = ExtResource("4_r7ghh")
+theme_override_font_sizes/font_size = 48
+text = "X "
+
+[node name="Palo" type="TextureRect" parent="Control/materiales_basicos"]
 texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = SubResource("AtlasTexture_75bb5")
 
-[node name="TextureRect" type="TextureRect" parent="Control/GridContainer/casilla 5"]
+[node name="TextureRect" type="TextureRect" parent="Control/materiales_basicos/Palo"]
 texture_filter = 1
 texture_repeat = 1
 layout_mode = 0
@@ -205,13 +360,25 @@ offset_right = 56.0
 offset_bottom = 56.0
 texture = SubResource("AtlasTexture_ydlyg")
 
-[node name="casilla 6" type="TextureRect" parent="Control/GridContainer"]
+[node name="palito" type="Label" parent="Control/materiales_basicos/Palo" groups=["cantidad"]]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 8.0
+offset_right = 288.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
+theme_override_colors/font_shadow_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
+theme_override_fonts/font = ExtResource("4_r7ghh")
+theme_override_font_sizes/font_size = 48
+text = "X "
+
+[node name="Arcilla" type="TextureRect" parent="Control/materiales_basicos"]
 texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = SubResource("AtlasTexture_lm7pk")
 
-[node name="TextureRect" type="TextureRect" parent="Control/GridContainer/casilla 6"]
+[node name="TextureRect" type="TextureRect" parent="Control/materiales_basicos/Arcilla"]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
@@ -219,13 +386,25 @@ offset_right = 56.0
 offset_bottom = 56.0
 texture = SubResource("AtlasTexture_veg21")
 
-[node name="casilla 7" type="TextureRect" parent="Control/GridContainer"]
+[node name="arcilla" type="Label" parent="Control/materiales_basicos/Arcilla" groups=["cantidad"]]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 12.0
+offset_right = 288.0
+offset_bottom = 60.0
+theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
+theme_override_colors/font_shadow_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
+theme_override_fonts/font = ExtResource("4_r7ghh")
+theme_override_font_sizes/font_size = 48
+text = "X "
+
+[node name="Fibra" type="TextureRect" parent="Control/materiales_basicos"]
 texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = SubResource("AtlasTexture_awygy")
 
-[node name="TextureRect2" type="TextureRect" parent="Control/GridContainer/casilla 7"]
+[node name="TextureRect2" type="TextureRect" parent="Control/materiales_basicos/Fibra"]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
@@ -233,79 +412,55 @@ offset_right = 56.0
 offset_bottom = 56.0
 texture = SubResource("AtlasTexture_fxvwu")
 
-[node name="madera" type="Label" parent="." groups=["cantidad"]]
-offset_left = 168.0
-offset_top = 72.0
-offset_right = 416.0
-offset_bottom = 120.0
+[node name="fibra" type="Label" parent="Control/materiales_basicos/Fibra" groups=["cantidad"]]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 8.0
+offset_right = 288.0
+offset_bottom = 56.0
 theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
 theme_override_colors/font_shadow_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
 theme_override_fonts/font = ExtResource("4_r7ghh")
 theme_override_font_sizes/font_size = 48
 text = "X "
 
-[node name="gajo" type="Label" parent="." groups=["cantidad"]]
-offset_left = 168.0
-offset_top = 144.0
-offset_right = 368.0
-offset_bottom = 192.0
+[node name="alimentos" type="GridContainer" parent="Control"]
+visible = false
+custom_minimum_size = Vector2(94, 94)
+layout_mode = 0
+offset_left = 80.0
+offset_top = 64.0
+offset_right = 544.0
+offset_bottom = 536.0
+
+[node name="Manzana" type="TextureButton" parent="Control/alimentos"]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_0rfm5")
+texture_pressed = SubResource("AtlasTexture_ccqxf")
+texture_hover = SubResource("AtlasTexture_8icch")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/alimentos/Manzana"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 56.0
+offset_bottom = 56.0
+texture = SubResource("AtlasTexture_u38qt")
+
+[node name="manzana" type="Label" parent="Control/alimentos/Manzana" groups=["cantidad"]]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 8.0
+offset_right = 288.0
+offset_bottom = 56.0
 theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
 theme_override_colors/font_shadow_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
 theme_override_fonts/font = ExtResource("4_r7ghh")
 theme_override_font_sizes/font_size = 48
 text = "X "
 
-[node name="piedra_p" type="Label" parent="." groups=["cantidad"]]
-offset_left = 168.0
-offset_top = 208.0
-offset_right = 488.0
-offset_bottom = 256.0
-theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
-theme_override_colors/font_shadow_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
-theme_override_fonts/font = ExtResource("4_r7ghh")
-theme_override_font_sizes/font_size = 48
-text = "X "
-
-[node name="carbon" type="Label" parent="." groups=["cantidad"]]
-offset_left = 168.0
-offset_top = 272.0
-offset_right = 368.0
-offset_bottom = 320.0
-theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
-theme_override_colors/font_shadow_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
-theme_override_fonts/font = ExtResource("4_r7ghh")
-theme_override_font_sizes/font_size = 48
-text = "X "
-
-[node name="palito" type="Label" parent="." groups=["cantidad"]]
-offset_left = 168.0
-offset_top = 344.0
-offset_right = 368.0
-offset_bottom = 392.0
-theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
-theme_override_colors/font_shadow_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
-theme_override_fonts/font = ExtResource("4_r7ghh")
-theme_override_font_sizes/font_size = 48
-text = "X "
-
-[node name="arcilla" type="Label" parent="." groups=["cantidad"]]
-offset_left = 168.0
-offset_top = 416.0
-offset_right = 368.0
-offset_bottom = 464.0
-theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
-theme_override_colors/font_shadow_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
-theme_override_fonts/font = ExtResource("4_r7ghh")
-theme_override_font_sizes/font_size = 48
-text = "X "
-
-[node name="fibra" type="Label" parent="." groups=["cantidad"]]
-offset_left = 168.0
-offset_top = 480.0
-offset_right = 368.0
-offset_bottom = 528.0
-theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
-theme_override_colors/font_shadow_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
-theme_override_fonts/font = ExtResource("4_r7ghh")
-theme_override_font_sizes/font_size = 48
-text = "X "
+[connection signal="pressed" from="Control/HBoxContainer/materiales_basicos" to="." method="_on_materiales_basicos_pressed"]
+[connection signal="pressed" from="Control/HBoxContainer/alimentos" to="." method="_on_alimentos_pressed"]

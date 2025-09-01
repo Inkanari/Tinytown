@@ -32,3 +32,10 @@ func actualizar_contadores(inventario):
 			contadores[item_name].text = str(inventario[item_name])
 		else:
 			contadores[item_name].text = "0"
+
+func _on_alimentos_pressed() -> void:
+	$Control/materiales_basicos.visible = false
+	$Control/alimentos.visible = true
+func _on_materiales_basicos_pressed() -> void:
+	$Control/materiales_basicos.visible = true
+	$Control/alimentos.visible = false
