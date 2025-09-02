@@ -1,8 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://benf3qf2xapsw"]
 
 [ext_resource type="Script" uid="uid://cjs3efnu2h182" path="res://carbon_item.gd" id="1_bhigd"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3nfo0"]
+[ext_resource type="Texture2D" uid="uid://i3rvrku3rud0" path="res://Recursos/resources_outlined.png" id="2_bhigd"]
 
 [sub_resource type="Animation" id="Animation_q6wnx"]
 length = 0.001
@@ -50,9 +49,9 @@ script = ExtResource("1_bhigd")
 [node name="carbon" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(0.6, 0.6)
-texture = SubResource("CompressedTexture2D_3nfo0")
+texture = ExtResource("2_bhigd")
 region_enabled = true
-region_rect = Rect2(98, 3, 18, 16)
+region_rect = Rect2(98, 2, 19, 19)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

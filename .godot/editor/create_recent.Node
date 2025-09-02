@@ -1,9 +1,10 @@
-Node
 AnimationPlayer
+AnimatedSprite2D
 CollisionShape2D
 Sprite2D
-StaticBody2D
 Area2D
+StaticBody2D
+Node
 TextureRect
 Label
 CanvasLayer
@@ -11,5 +12,3 @@ TextureButton
 GridContainer
 HBoxContainer
 Control
-TabContainer
-Timer

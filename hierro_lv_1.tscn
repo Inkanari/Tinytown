@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bm2qw76lfyhh3"]
+
+[ext_resource type="Script" uid="uid://ca30or81gvy8l" path="res://hierro_lv_1.gd" id="1_ihfxc"]
+[ext_resource type="Texture2D" uid="uid://b8jpe76o2nha6" path="res://Estructuras/spr_tileset_sunnysideworld_16px.png" id="1_qwj4t"]
+[ext_resource type="PackedScene" uid="uid://d4cvhwbpia4b1" path="res://hierro_bruto_item.tscn" id="2_4m4do"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ihfxc"]
+size = Vector2(20, 17)
+
+[node name="hierro_lv_1" type="StaticBody2D"]
+script = ExtResource("1_ihfxc")
+drop_escene = ExtResource("2_4m4do")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_qwj4t")
+region_enabled = true
+region_rect = Rect2(855, 349, 18, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+scale = Vector2(0.81, 0.75)
+shape = SubResource("RectangleShape2D_ihfxc")
