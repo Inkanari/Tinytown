@@ -1,4 +1,5 @@
 extends CanvasLayer
+
 var inventario = {}
 var contadores = {}
 
@@ -36,6 +37,8 @@ func actualizar_contadores(inventario):
 func _on_alimentos_pressed() -> void:
 	$Control/materiales_basicos.visible = false
 	$Control/alimentos.visible = true
+	$Control/comercio.visible = false
 func _on_materiales_basicos_pressed() -> void:
 	$Control/materiales_basicos.visible = true
 	$Control/alimentos.visible = false
+	$Control/comercio.visible = false
