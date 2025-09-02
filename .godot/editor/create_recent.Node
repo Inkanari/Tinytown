@@ -1,8 +1,8 @@
+StaticBody2D
 Node
 AnimationPlayer
 CollisionShape2D
 Sprite2D
-StaticBody2D
 Area2D
 TextureRect
 Label
@@ -12,4 +12,3 @@ GridContainer
 HBoxContainer
 Control
 TabContainer
-Timer

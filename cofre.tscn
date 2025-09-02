@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dis37gdxasu"]
+[gd_scene load_steps=7 format=3 uid="uid://dis37gdxasu"]
 
 [ext_resource type="Texture2D" uid="uid://b8jpe76o2nha6" path="res://Estructuras/spr_tileset_sunnysideworld_16px.png" id="1_a8yx5"]
 [ext_resource type="Script" uid="uid://bnypq7qgpw1q0" path="res://cofre.gd" id="1_ynwns"]
 [ext_resource type="PackedScene" uid="uid://dy4tlr3e6qyy1" path="res://dinero_item.tscn" id="2_2td3n"]
+[ext_resource type="Texture2D" uid="uid://dwj755fijwgtr" path="res://Estructuras/Cofre_abierto (1).png" id="2_4ctoc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ynwns"]
 atlas = ExtResource("1_a8yx5")
@@ -13,6 +14,7 @@ size = Vector2(14, 8)
 
 [node name="cofre" type="StaticBody2D"]
 script = ExtResource("1_ynwns")
+cofre_abierto = ExtResource("2_4ctoc")
 drop_escene = ExtResource("2_2td3n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
