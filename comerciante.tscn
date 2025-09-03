@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://bpvcl6cx5nj50"]
+
+[ext_resource type="Script" uid="uid://cfw7sxc5edrxq" path="res://comerciante.gd" id="1_knfn7"]
+[ext_resource type="Texture2D" uid="uid://dh8qcvax4cjfh" path="res://personaje/Human/IDLE/base_idle_strip9.png" id="1_vrj84"]
+[ext_resource type="Texture2D" uid="uid://dxvuqw624fjel" path="res://personaje/Human/IDLE/bowlhair_idle_strip9.png" id="2_knfn7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hio5a"]
+radius = 48.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hio5a"]
+atlas = ExtResource("1_vrj84")
+region = Rect2(43, 23, 11, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yw6yt"]
+atlas = ExtResource("2_knfn7")
+region = Rect2(522, 23, 13, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vrj84"]
+size = Vector2(9, 10)
+
+[node name="comerciante" type="CharacterBody2D"]
+script = ExtResource("1_knfn7")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_hio5a")
+debug_color = Color(0.844412, 0.00102884, 0.913076, 0.42)
+
+[node name="cuerpo" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("AtlasTexture_hio5a")
+
+[node name="pelo" type="Sprite2D" parent="cuerpo"]
+position = Vector2(0, -1)
+texture = SubResource("AtlasTexture_yw6yt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_vrj84")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
