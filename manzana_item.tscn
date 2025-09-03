@@ -1,11 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://c73cnt0qoty7w"]
+[gd_scene load_steps=7 format=3 uid="uid://c73cnt0qoty7w"]
 
-[ext_resource type="Texture2D" uid="uid://i3rvrku3rud0" path="res://Recursos/resources_outlined.png" id="1_8u82c"]
 [ext_resource type="Script" uid="uid://c4l8nq1wxvqbe" path="res://manzana_item.gd" id="1_ml2bd"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ml2bd"]
-atlas = ExtResource("1_8u82c")
-region = Rect2(50, 146, 20, 18)
+[ext_resource type="Texture2D" uid="uid://b853pfbhj4i5o" path="res://icons_textura/manzana.tres" id="2_ml2bd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o3b0t"]
 radius = 8.0
@@ -55,7 +51,7 @@ script = ExtResource("1_ml2bd")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(0.8, 0.8)
-texture = SubResource("AtlasTexture_ml2bd")
+texture = ExtResource("2_ml2bd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0)

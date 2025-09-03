@@ -1,18 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dw57f0ipicm0v"]
+[gd_scene load_steps=3 format=3 uid="uid://dw57f0ipicm0v"]
 
-[ext_resource type="Texture2D" uid="uid://i3rvrku3rud0" path="res://Recursos/resources_outlined.png" id="1_eav4c"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m768k"]
-atlas = ExtResource("1_eav4c")
-region = Rect2(1, 124, 23, 15)
+[ext_resource type="Texture2D" uid="uid://bhlrv5cuktsb8" path="res://icons_textura/lingote_oro.tres" id="1_eav4c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wt6fg"]
 
 [node name="lingote_oro" type="Area2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="lingote_de_oro" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = SubResource("AtlasTexture_m768k")
+texture = ExtResource("1_eav4c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_wt6fg")
