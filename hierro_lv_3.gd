@@ -3,7 +3,7 @@ extends StaticBody2D
 signal destruir
 var ocupado: bool = false
 
-@export var vida: int = 6
+@export var vida: int = 20
 @export var drop_escene: PackedScene
 #shake
 var shake_magnitud = 5
@@ -29,7 +29,7 @@ func recibir_golpe(daño: int = 1):
 func picar():
 	if drop_escene:
 		emit_signal("destruir", self)
-		for i in range(3):
+		for i in range(7):
 			var loot = drop_escene.instantiate()
 			var x = randf_range(10, -10)
 			var y = randf_range(-10, 10)

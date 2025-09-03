@@ -3,7 +3,7 @@ extends StaticBody2D
 signal destruir
 var ocupado: bool = false
 
-@export var vida: int = 6
+@export var vida: int = 10
 @export var drop_escene: PackedScene
 #shake
 var shake_magnitud = 5
