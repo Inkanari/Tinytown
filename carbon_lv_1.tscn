@@ -12,11 +12,12 @@ script = ExtResource("1_xt12d")
 drop_escene = ExtResource("2_66chp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
 texture_filter = 1
 texture = ExtResource("1_t7221")
+offset = Vector2(0, -1)
 region_enabled = true
 region_rect = Rect2(855, 381, 18, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_hbhor")
