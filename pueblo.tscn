@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://q85iosfg0so2"]
+[gd_scene load_steps=55 format=4 uid="uid://q85iosfg0so2"]
 
 [ext_resource type="Texture2D" uid="uid://caxlfuytmits3" path="res://Tilemap/Tileset/dirt.png" id="1_8qe2h"]
 [ext_resource type="Texture2D" uid="uid://bpgye5pws45o6" path="res://Tilemap/Tileset/sand.png" id="2_g14jh"]
@@ -24,10 +24,14 @@
 [ext_resource type="PackedScene" uid="uid://dn32iqj5onbv7" path="res://piedra_lv_3.tscn" id="22_7vwwt"]
 [ext_resource type="PackedScene" uid="uid://b4y2tfdiyknrr" path="res://carbon_lv_1.tscn" id="23_cx1s2"]
 [ext_resource type="PackedScene" uid="uid://dxbq7r5fbuwis" path="res://carbon_lv_2.tscn" id="24_sd6s8"]
+[ext_resource type="PackedScene" uid="uid://dltw4e4ua6cqp" path="res://carbon_lv_3.tscn" id="25_6cuoh"]
 [ext_resource type="PackedScene" uid="uid://b418ypd53pc0h" path="res://esqueleto.tscn" id="25_kvb3i"]
-[ext_resource type="PackedScene" uid="uid://clhj33cvniq70" path="res://arbusto_de_fibra.tscn" id="26_q8h3q"]
+[ext_resource type="PackedScene" path="res://arbusto_de_fibra.tscn" id="26_q8h3q"]
+[ext_resource type="PackedScene" uid="uid://bm2qw76lfyhh3" path="res://hierro_lv_1.tscn" id="26_rt3ku"]
 [ext_resource type="PackedScene" uid="uid://dis37gdxasu" path="res://cofre.tscn" id="27_ag1ng"]
-[ext_resource type="PackedScene" uid="uid://bpvcl6cx5nj50" path="res://comerciante.tscn" id="28_6cuoh"]
+[ext_resource type="PackedScene" uid="uid://cax2u2lk2yw50" path="res://hierro_lv_2.tscn" id="27_qw27b"]
+[ext_resource type="PackedScene" uid="uid://c67cdx5s8e2uv" path="res://hierro_lv_3.tscn" id="28_4jm1m"]
+[ext_resource type="PackedScene" path="res://comerciante.tscn" id="28_6cuoh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_46lw5"]
 texture = ExtResource("1_8qe2h")
@@ -2442,11 +2446,23 @@ position = Vector2(284, 126)
 [node name="carbon_lv_1" parent="." instance=ExtResource("23_cx1s2")]
 position = Vector2(20, 124)
 
+[node name="carbon_lv_3" parent="." instance=ExtResource("25_6cuoh")]
+position = Vector2(31, 185)
+
 [node name="carbon_lv_2" parent="." instance=ExtResource("24_sd6s8")]
 position = Vector2(99, 158)
 
 [node name="Arbol3" parent="." instance=ExtResource("17_2086w")]
 position = Vector2(-67, 83)
+
+[node name="hierro_lv_1" parent="." instance=ExtResource("26_rt3ku")]
+position = Vector2(-28, 178)
+
+[node name="hierro_lv_2" parent="." instance=ExtResource("27_qw27b")]
+position = Vector2(-143, 172)
+
+[node name="hierro_lv_3" parent="." instance=ExtResource("28_4jm1m")]
+position = Vector2(-192, 94)
 
 [node name="Arbol4" parent="." instance=ExtResource("17_2086w")]
 position = Vector2(-63, -9)
