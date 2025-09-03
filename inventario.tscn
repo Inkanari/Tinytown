@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://r6wnasu2cbal"]
+[gd_scene load_steps=51 format=3 uid="uid://r6wnasu2cbal"]
 
 [ext_resource type="Script" uid="uid://x4x7y31wgpvj" path="res://inventario.gd" id="1_bmj48"]
 [ext_resource type="Texture2D" uid="uid://b6f6w6vqyya0q" path="res://UI/UI_TravelBook_Spritesheet01a.png" id="1_xf715"]
@@ -137,13 +137,25 @@ region = Rect2(50, 146, 20, 20)
 atlas = ExtResource("1_xf715")
 region = Rect2(65, 289, 30, 30)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_6on2q"]
+atlas = ExtResource("1_xf715")
+region = Rect2(65, 353, 30, 30)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_7l3sp"]
 atlas = ExtResource("1_xf715")
 region = Rect2(65, 289, 30, 30)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqh01"]
+atlas = ExtResource("1_xf715")
+region = Rect2(65, 353, 30, 30)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_2cxk1"]
 atlas = ExtResource("1_xf715")
 region = Rect2(65, 289, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gq3gs"]
+atlas = ExtResource("1_xf715")
+region = Rect2(65, 353, 30, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fu3do"]
 atlas = ExtResource("1_xf715")
@@ -521,13 +533,13 @@ text = "X "
 [node name="comercio" type="GridContainer" parent="Control"]
 visible = false
 layout_mode = 0
-offset_left = 72.0
-offset_top = 56.0
-offset_right = 1072.0
-offset_bottom = 512.0
+offset_left = 68.0
+offset_top = 51.0
+offset_right = 1076.0
+offset_bottom = 507.0
 theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 100
-columns = 8
+columns = 13
 script = ExtResource("8_aaktn")
 
 [node name="casilla_1" type="TextureButton" parent="Control/comercio"]
@@ -535,6 +547,7 @@ texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_4llgo")
+texture_pressed = SubResource("AtlasTexture_6on2q")
 stretch_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="Control/comercio/casilla_1"]
@@ -544,10 +557,22 @@ offset_top = 8.0
 offset_right = 56.0
 offset_bottom = 56.0
 
+[node name="Label" type="Label" parent="Control/comercio/casilla_1"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 72.0
+offset_right = 56.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.388235, 0.25098, 0.254902, 1)
+theme_override_fonts/font = ExtResource("4_r7ghh")
+text = "100"
+
 [node name="casilla_2" type="TextureButton" parent="Control/comercio"]
+texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_7l3sp")
+texture_pressed = SubResource("AtlasTexture_tqh01")
 stretch_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="Control/comercio/casilla_2"]
@@ -557,11 +582,23 @@ offset_top = 8.0
 offset_right = 56.0
 offset_bottom = 56.0
 
+[node name="Label" type="Label" parent="Control/comercio/casilla_2"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 8.0
+offset_top = 72.0
+offset_right = 56.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.388235, 0.25098, 0.254902, 1)
+theme_override_fonts/font = ExtResource("4_r7ghh")
+text = "100"
+
 [node name="casilla_3" type="TextureButton" parent="Control/comercio"]
 texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_2cxk1")
+texture_pressed = SubResource("AtlasTexture_gq3gs")
 stretch_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="Control/comercio/casilla_3"]
@@ -571,11 +608,23 @@ offset_top = 8.0
 offset_right = 56.0
 offset_bottom = 56.0
 
+[node name="Label" type="Label" parent="Control/comercio/casilla_3"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 8.0
+offset_top = 72.0
+offset_right = 56.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.388235, 0.25098, 0.254902, 1)
+theme_override_fonts/font = ExtResource("4_r7ghh")
+text = "100"
+
 [node name="casilla_4" type="TextureButton" parent="Control/comercio"]
 texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_fu3do")
+texture_pressed = SubResource("AtlasTexture_gq3gs")
 stretch_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="Control/comercio/casilla_4"]
@@ -585,11 +634,23 @@ offset_top = 8.0
 offset_right = 56.0
 offset_bottom = 56.0
 
+[node name="Label" type="Label" parent="Control/comercio/casilla_4"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 8.0
+offset_top = 72.0
+offset_right = 56.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.388235, 0.25098, 0.254902, 1)
+theme_override_fonts/font = ExtResource("4_r7ghh")
+text = "100"
+
 [node name="casilla_5" type="TextureButton" parent="Control/comercio"]
 texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_80n2c")
+texture_pressed = SubResource("AtlasTexture_gq3gs")
 stretch_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="Control/comercio/casilla_5"]
@@ -599,11 +660,23 @@ offset_top = 8.0
 offset_right = 56.0
 offset_bottom = 56.0
 
+[node name="Label" type="Label" parent="Control/comercio/casilla_5"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 8.0
+offset_top = 72.0
+offset_right = 56.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.388235, 0.25098, 0.254902, 1)
+theme_override_fonts/font = ExtResource("4_r7ghh")
+text = "100"
+
 [node name="casilla_6" type="TextureButton" parent="Control/comercio"]
 texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_8s5bq")
+texture_pressed = SubResource("AtlasTexture_gq3gs")
 stretch_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="Control/comercio/casilla_6"]
@@ -613,22 +686,312 @@ offset_top = 8.0
 offset_right = 56.0
 offset_bottom = 56.0
 
-[node name="TextureButton6" type="TextureButton" parent="Control/comercio"]
+[node name="Label" type="Label" parent="Control/comercio/casilla_6"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 8.0
+offset_top = 72.0
+offset_right = 56.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.388235, 0.25098, 0.254902, 1)
+theme_override_fonts/font = ExtResource("4_r7ghh")
+text = "100"
+
+[node name="casilla_intermedia" type="TextureRect" parent="Control/comercio"]
 layout_mode = 2
 
-[node name="TextureButton5" type="TextureButton" parent="Control/comercio"]
+[node name="casilla_7" type="TextureButton" parent="Control/comercio"]
 texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_2kpcp")
+texture_pressed = SubResource("AtlasTexture_gq3gs")
 stretch_mode = 1
 
-[node name="TextureButton7" type="TextureButton" parent="Control/comercio"]
+[node name="TextureRect" type="TextureRect" parent="Control/comercio/casilla_7"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 56.0
+offset_bottom = 56.0
+
+[node name="Label" type="Label" parent="Control/comercio/casilla_7"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 8.0
+offset_top = 72.0
+offset_right = 56.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.388235, 0.25098, 0.254902, 1)
+theme_override_fonts/font = ExtResource("4_r7ghh")
+text = "100"
+
+[node name="casilla_8" type="TextureButton" parent="Control/comercio"]
 texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_1yh1g")
+texture_pressed = SubResource("AtlasTexture_gq3gs")
 stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/comercio/casilla_8"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 56.0
+offset_bottom = 56.0
+
+[node name="Label" type="Label" parent="Control/comercio/casilla_8"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 8.0
+offset_top = 72.0
+offset_right = 56.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.388235, 0.25098, 0.254902, 1)
+theme_override_fonts/font = ExtResource("4_r7ghh")
+text = "100"
+
+[node name="casilla_9" type="TextureButton" parent="Control/comercio"]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_1yh1g")
+texture_pressed = SubResource("AtlasTexture_gq3gs")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/comercio/casilla_9"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 56.0
+offset_bottom = 56.0
+
+[node name="Label" type="Label" parent="Control/comercio/casilla_9"]
+texture_filter = 1
+offset_left = 8.0
+offset_top = 72.0
+offset_right = 56.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.388235, 0.25098, 0.254902, 1)
+theme_override_fonts/font = ExtResource("4_r7ghh")
+text = "100"
+
+[node name="casilla_10" type="TextureButton" parent="Control/comercio"]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_1yh1g")
+texture_pressed = SubResource("AtlasTexture_gq3gs")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/comercio/casilla_10"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 56.0
+offset_bottom = 56.0
+
+[node name="Label" type="Label" parent="Control/comercio/casilla_10"]
+texture_filter = 1
+offset_left = 8.0
+offset_top = 72.0
+offset_right = 56.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.388235, 0.25098, 0.254902, 1)
+theme_override_fonts/font = ExtResource("4_r7ghh")
+text = "100"
+
+[node name="casilla_11" type="TextureButton" parent="Control/comercio"]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_1yh1g")
+texture_pressed = SubResource("AtlasTexture_gq3gs")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/comercio/casilla_11"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 56.0
+offset_bottom = 56.0
+
+[node name="Label" type="Label" parent="Control/comercio/casilla_11"]
+texture_filter = 1
+offset_left = 8.0
+offset_top = 72.0
+offset_right = 56.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.388235, 0.25098, 0.254902, 1)
+theme_override_fonts/font = ExtResource("4_r7ghh")
+text = "100"
+
+[node name="casilla_12" type="TextureButton" parent="Control/comercio"]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_1yh1g")
+texture_pressed = SubResource("AtlasTexture_gq3gs")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/comercio/casilla_12"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 56.0
+offset_bottom = 56.0
+
+[node name="Label" type="Label" parent="Control/comercio/casilla_12"]
+texture_filter = 1
+offset_left = 8.0
+offset_top = 72.0
+offset_right = 56.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.388235, 0.25098, 0.254902, 1)
+theme_override_fonts/font = ExtResource("4_r7ghh")
+text = "100"
+
+[node name="casilla_13" type="TextureButton" parent="Control/comercio"]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_1yh1g")
+texture_pressed = SubResource("AtlasTexture_gq3gs")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/comercio/casilla_13"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 56.0
+offset_bottom = 56.0
+
+[node name="Label" type="Label" parent="Control/comercio/casilla_13"]
+texture_filter = 1
+offset_left = 8.0
+offset_top = 72.0
+offset_right = 56.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.388235, 0.25098, 0.254902, 1)
+theme_override_fonts/font = ExtResource("4_r7ghh")
+text = "100"
+
+[node name="casilla_14" type="TextureButton" parent="Control/comercio"]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_1yh1g")
+texture_pressed = SubResource("AtlasTexture_gq3gs")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/comercio/casilla_14"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 56.0
+offset_bottom = 56.0
+
+[node name="Label" type="Label" parent="Control/comercio/casilla_14"]
+texture_filter = 1
+offset_left = 8.0
+offset_top = 72.0
+offset_right = 56.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.388235, 0.25098, 0.254902, 1)
+theme_override_fonts/font = ExtResource("4_r7ghh")
+text = "100"
+
+[node name="casilla_15" type="TextureButton" parent="Control/comercio"]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_1yh1g")
+texture_pressed = SubResource("AtlasTexture_gq3gs")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/comercio/casilla_15"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 56.0
+offset_bottom = 56.0
+
+[node name="Label" type="Label" parent="Control/comercio/casilla_15"]
+texture_filter = 1
+offset_left = 8.0
+offset_top = 72.0
+offset_right = 56.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.388235, 0.25098, 0.254902, 1)
+theme_override_fonts/font = ExtResource("4_r7ghh")
+text = "100"
+
+[node name="casilla_16" type="TextureButton" parent="Control/comercio"]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_1yh1g")
+texture_pressed = SubResource("AtlasTexture_gq3gs")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/comercio/casilla_16"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 56.0
+offset_bottom = 56.0
+
+[node name="Label" type="Label" parent="Control/comercio/casilla_16"]
+texture_filter = 1
+offset_left = 8.0
+offset_top = 72.0
+offset_right = 56.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.388235, 0.25098, 0.254902, 1)
+theme_override_fonts/font = ExtResource("4_r7ghh")
+text = "100"
+
+[node name="casilla_17" type="TextureButton" parent="Control/comercio"]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_1yh1g")
+texture_pressed = SubResource("AtlasTexture_gq3gs")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/comercio/casilla_17"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 56.0
+offset_bottom = 56.0
+
+[node name="Label" type="Label" parent="Control/comercio/casilla_17"]
+texture_filter = 1
+offset_left = 8.0
+offset_top = 72.0
+offset_right = 56.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.388235, 0.25098, 0.254902, 1)
+theme_override_fonts/font = ExtResource("4_r7ghh")
+text = "100"
+
+[node name="casilla_18" type="TextureButton" parent="Control/comercio"]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_1yh1g")
+texture_pressed = SubResource("AtlasTexture_gq3gs")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/comercio/casilla_18"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 56.0
+offset_bottom = 56.0
+
+[node name="Label" type="Label" parent="Control/comercio/casilla_18"]
+texture_filter = 1
+offset_left = 8.0
+offset_top = 72.0
+offset_right = 56.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.388235, 0.25098, 0.254902, 1)
+theme_override_fonts/font = ExtResource("4_r7ghh")
+text = "100"
 
 [connection signal="pressed" from="Control/HBoxContainer/materiales_basicos" to="." method="_on_materiales_basicos_pressed"]
 [connection signal="pressed" from="Control/HBoxContainer/alimentos" to="." method="_on_alimentos_pressed"]
+[connection signal="pressed" from="Control/comercio/casilla_1" to="Control/comercio" method="_on_casilla_1_pressed"]
