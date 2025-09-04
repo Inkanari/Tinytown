@@ -10,7 +10,7 @@ atlas = ExtResource("1_y8pbo")
 region = Rect2(856, 477, 16, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqs2w"]
-size = Vector2(14, 8)
+size = Vector2(16, 9.5)
 
 [node name="Piedra_lv1" type="StaticBody2D" groups=["piedras"]]
 script = ExtResource("1_dlgiv")
@@ -21,7 +21,8 @@ drop_escene_2 = ExtResource("3_nx25v")
 texture_filter = 1
 texture_repeat = 1
 texture = SubResource("AtlasTexture_dlgiv")
+offset = Vector2(0, -2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+y_sort_enabled = true
 shape = SubResource("RectangleShape2D_kqs2w")
