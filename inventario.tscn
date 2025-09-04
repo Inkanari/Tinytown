@@ -761,6 +761,7 @@ texture_pressed = SubResource("AtlasTexture_gq3gs")
 stretch_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="Control/comercio/casilla_9"]
+layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 56.0
@@ -768,6 +769,7 @@ offset_bottom = 56.0
 
 [node name="Label" type="Label" parent="Control/comercio/casilla_9"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 8.0
 offset_top = 72.0
 offset_right = 56.0
@@ -785,6 +787,7 @@ texture_pressed = SubResource("AtlasTexture_gq3gs")
 stretch_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="Control/comercio/casilla_10"]
+layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 56.0
@@ -792,6 +795,7 @@ offset_bottom = 56.0
 
 [node name="Label" type="Label" parent="Control/comercio/casilla_10"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 8.0
 offset_top = 72.0
 offset_right = 56.0
@@ -809,6 +813,7 @@ texture_pressed = SubResource("AtlasTexture_gq3gs")
 stretch_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="Control/comercio/casilla_11"]
+layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 56.0
@@ -816,6 +821,7 @@ offset_bottom = 56.0
 
 [node name="Label" type="Label" parent="Control/comercio/casilla_11"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 8.0
 offset_top = 72.0
 offset_right = 56.0
@@ -833,6 +839,7 @@ texture_pressed = SubResource("AtlasTexture_gq3gs")
 stretch_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="Control/comercio/casilla_12"]
+layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 56.0
@@ -840,6 +847,7 @@ offset_bottom = 56.0
 
 [node name="Label" type="Label" parent="Control/comercio/casilla_12"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 8.0
 offset_top = 72.0
 offset_right = 56.0
@@ -857,6 +865,7 @@ texture_pressed = SubResource("AtlasTexture_gq3gs")
 stretch_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="Control/comercio/casilla_13"]
+layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 56.0
@@ -864,6 +873,7 @@ offset_bottom = 56.0
 
 [node name="Label" type="Label" parent="Control/comercio/casilla_13"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 8.0
 offset_top = 72.0
 offset_right = 56.0
@@ -881,6 +891,7 @@ texture_pressed = SubResource("AtlasTexture_gq3gs")
 stretch_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="Control/comercio/casilla_14"]
+layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 56.0
@@ -888,6 +899,7 @@ offset_bottom = 56.0
 
 [node name="Label" type="Label" parent="Control/comercio/casilla_14"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 8.0
 offset_top = 72.0
 offset_right = 56.0
@@ -905,6 +917,7 @@ texture_pressed = SubResource("AtlasTexture_gq3gs")
 stretch_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="Control/comercio/casilla_15"]
+layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 56.0
@@ -912,6 +925,7 @@ offset_bottom = 56.0
 
 [node name="Label" type="Label" parent="Control/comercio/casilla_15"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 8.0
 offset_top = 72.0
 offset_right = 56.0
@@ -929,6 +943,7 @@ texture_pressed = SubResource("AtlasTexture_gq3gs")
 stretch_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="Control/comercio/casilla_16"]
+layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 56.0
@@ -936,6 +951,7 @@ offset_bottom = 56.0
 
 [node name="Label" type="Label" parent="Control/comercio/casilla_16"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 8.0
 offset_top = 72.0
 offset_right = 56.0
@@ -953,6 +969,7 @@ texture_pressed = SubResource("AtlasTexture_gq3gs")
 stretch_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="Control/comercio/casilla_17"]
+layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 56.0
@@ -960,6 +977,7 @@ offset_bottom = 56.0
 
 [node name="Label" type="Label" parent="Control/comercio/casilla_17"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 8.0
 offset_top = 72.0
 offset_right = 56.0
@@ -977,6 +995,7 @@ texture_pressed = SubResource("AtlasTexture_gq3gs")
 stretch_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="Control/comercio/casilla_18"]
+layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 56.0
@@ -984,6 +1003,7 @@ offset_bottom = 56.0
 
 [node name="Label" type="Label" parent="Control/comercio/casilla_18"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 8.0
 offset_top = 72.0
 offset_right = 56.0
