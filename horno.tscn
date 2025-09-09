@@ -1,0 +1,128 @@
+[gd_scene load_steps=12 format=3 uid="uid://0me8gj8jdt6"]
+
+[ext_resource type="Script" uid="uid://80kc7yqx2wrg" path="res://horno.gd" id="1_te128"]
+[ext_resource type="Texture2D" uid="uid://dfcvqt6ygj7ep" path="res://Estructuras/horno.png" id="2_rqase"]
+[ext_resource type="Script" uid="uid://5mlx0d7ufm5c" path="res://horno_menu.gd" id="3_rqase"]
+[ext_resource type="Texture2D" uid="uid://babmtngh6uq7" path="res://Recursos/resources_red_bg.png" id="4_1o71r"]
+[ext_resource type="FontFile" uid="uid://ccso76x5al8so" path="res://texto/cc.yal.7w7.block.otf" id="4_btygr"]
+[ext_resource type="Texture2D" uid="uid://depsntuabvn8d" path="res://UI/UI/arrow_up-1.png" id="5_dqqlf"]
+[ext_resource type="Texture2D" uid="uid://btryblhc0c33s" path="res://UI/UI/redbar_00.png" id="7_1o71r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_btygr"]
+radius = 24.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_btygr"]
+size = Vector2(21.8, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aamls"]
+atlas = ExtResource("4_1o71r")
+region = Rect2(97, 1, 23, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pxvk"]
+atlas = ExtResource("4_1o71r")
+region = Rect2(25, 73, 23, 23)
+
+[node name="horno" type="StaticBody2D"]
+script = ExtResource("1_te128")
+
+[node name="AreaDeteccion" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDeteccion"]
+shape = SubResource("CircleShape2D_btygr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_rqase")
+offset = Vector2(0.5, -28)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.335)
+scale = Vector2(1.025, 0.795)
+shape = SubResource("RectangleShape2D_btygr")
+
+[node name="HornoMenu" type="Control" parent="."]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = 14.585
+offset_top = -19.31
+offset_right = 84.585
+offset_bottom = 40.69
+script = ExtResource("3_rqase")
+
+[node name="Panel" type="Panel" parent="HornoMenu"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 70.0
+offset_bottom = 60.0
+
+[node name="CarbonIcon" type="TextureRect" parent="HornoMenu/Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 24.0
+offset_bottom = 26.0
+texture = SubResource("AtlasTexture_aamls")
+
+[node name="CarbonCount" type="Label" parent="HornoMenu/Panel/CarbonIcon"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 14.0
+offset_top = 14.0
+offset_right = 24.0
+offset_bottom = 24.0
+scale = Vector2(0.725, 0.725)
+theme_override_colors/font_color = Color(0.721859, 0.721859, 0.721859, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_btygr")
+
+[node name="HierroIcon" type="TextureRect" parent="HornoMenu/Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 47.0
+offset_top = 3.0
+offset_right = 67.0
+offset_bottom = 23.0
+texture = SubResource("AtlasTexture_0pxvk")
+
+[node name="HierroCount" type="Label" parent="HornoMenu/Panel/HierroIcon"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 14.0
+offset_top = 14.0
+offset_right = 24.0
+offset_bottom = 24.0
+scale = Vector2(0.725, 0.725)
+theme_override_colors/font_color = Color(0.721569, 0.721569, 0.721569, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_btygr")
+
+[node name="FundirButton" type="TextureButton" parent="HornoMenu/Panel"]
+z_index = 2
+texture_filter = 1
+layout_mode = 0
+offset_left = 30.415
+offset_top = 24.44
+offset_right = 40.415
+offset_bottom = 37.465
+scale = Vector2(1.07, 1.07)
+mouse_filter = 1
+action_mode = 0
+texture_normal = ExtResource("5_dqqlf")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="HornoMenu/Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 27.98
+offset_top = 41.04
+offset_right = 51.93
+offset_bottom = 48.04
+texture_under = ExtResource("7_1o71r")
+
+[node name="Timer" type="Timer" parent="HornoMenu/Panel"]
+
+[connection signal="body_entered" from="AreaDeteccion" to="." method="_on_area_deteccion_body_entered"]
+[connection signal="body_exited" from="AreaDeteccion" to="." method="_on_area_deteccion_body_exited"]
+[connection signal="pressed" from="HornoMenu/Panel/FundirButton" to="." method="_on_fundir_button_pressed"]
+[connection signal="timeout" from="HornoMenu/Panel/Timer" to="HornoMenu" method="_on_timer_timeout"]
