@@ -5,9 +5,9 @@ extends StaticBody2D
 var abierto = false
 
 func abrir_cofre() -> void:
-	var aleatorio = randi_range(10, 50)
+	var aleatorio = randi_range(1, 50)
 	if abierto:
-		pass
+		return
 	if drop_escene:
 		for i in range(aleatorio):
 			var dinero = drop_escene.instantiate()
